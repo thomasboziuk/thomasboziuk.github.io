@@ -10,5 +10,27 @@
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion</title>
+      <link>http://www.boziuk.com/post/APS-GFM/</link>
+      <pubDate>Thu, 01 Dec 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/APS-GFM/</guid>
+      <description>
+
+&lt;p&gt;The Gallery of Fluid Motion is one of the most enjoyable aspects of the American Physical Society&amp;rsquo;s Division of Fluid Dynamics conferences. Although I had long admired the creativity of the entries, I never found the time to create a poster or video worthy of submission. In 2016, I devoted a significant effort to capturing a phenomena under investigation, and submitted a poster, which was one of the winners of the 2016 APS/DFD Gallery of Fluid Motion award winners in the poster category.&lt;/p&gt;
+
+&lt;p&gt;A train of vapor bubbles is formed by ejection into a subcooled liquid pool. In the base flow, surface tension pinch-off drives a liquid &amp;ldquo;spear&amp;rdquo; through the center of the vapor bubble to form a vapor torus that leads to rapid condensation. Alternatively, using a directed 1.7 MHz pulsed acoustic beam early in the vapor bubble formation (and prior to pinch-off) exploits the liquid-vapor acoustic impedance mismatch to force a similar liquid &amp;ldquo;spear,&amp;rdquo; forming a vapor torus and accelerating the bubble collapse.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.boziuk.com/img/aps_gfm_poster_boziuk_smith_glezer.png&#34; alt=&#34;Accelerated Condensation in an Ultrasonic Field - Boziuk Smith and Glezer&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gfm.aps.org/meetings/dfd-2016/57daf430b8ac311791000aad&#34; target=&#34;_blank&#34;&gt;Accelerated Condensation in an Ultrasonic Field&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gfm.aps.org/&#34; target=&#34;_blank&#34;&gt;Gallery of Fluid Motion&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
