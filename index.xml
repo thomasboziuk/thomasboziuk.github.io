@@ -2,30 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Boziuk on Boziuk</title>
-    <link>http://www.boziuk.com/index.xml</link>
+    <link>http://www.boziuk.com/</link>
     <description>Recent content in Boziuk on Boziuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Thomas Boziuk</copyright>
     <lastBuildDate>Thu, 18 Jan 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Enhanced boiling heat transfer on plain and featured surfaces using acoustic actuation</title>
-      <link>http://www.boziuk.com/publication/enhanced-boiling-IJHMT/</link>
+      <link>http://www.boziuk.com/publication/enhanced-boiling-ijhmt/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.boziuk.com/publication/enhanced-boiling-IJHMT/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>http://www.boziuk.com/publication/enhanced-boiling-ijhmt/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion</title>
-      <link>http://www.boziuk.com/post/APS-GFM/</link>
+      <link>http://www.boziuk.com/post/aps-gfm/</link>
       <pubDate>Thu, 01 Dec 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://www.boziuk.com/post/APS-GFM/</guid>
+      <guid>http://www.boziuk.com/post/aps-gfm/</guid>
       <description>
 
 &lt;p&gt;The Gallery of Fluid Motion is one of the most enjoyable aspects of the American Physical Society&amp;rsquo;s Division of Fluid Dynamics conferences. Although I had long admired the creativity of the entries, I never found the time to create a poster or video worthy of submission. In 2016, I devoted a significant effort to capturing a phenomena under investigation, and submitted a poster, which was one of the winners of the 2016 APS/DFD Gallery of Fluid Motion award winners in the poster category.&lt;/p&gt;

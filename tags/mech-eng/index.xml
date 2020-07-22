@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mech Eng on Boziuk</title>
-    <link>http://www.boziuk.com/tags/mech-eng/index.xml</link>
+    <link>http://www.boziuk.com/tags/mech-eng/</link>
     <description>Recent content in Mech Eng on Boziuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Thomas Boziuk</copyright>
-    <atom:link href="/tags/mech-eng/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.boziuk.com/tags/mech-eng/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Acoustically Enhanced Boiling</title>
@@ -15,12 +18,8 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.boziuk.com/project/enhanced-boiling/</guid>
-      <description>&lt;p&gt;Boiling heat transfer on submerged textured heated surfaces is enhanced using ultrasound actuation. The heated surface is textured using an array of open microchannels that advantageously separate the nucleation sites on the surface and inhibit the transition to film boiling, which significantly increases the critical heat flux compared to a smooth surface of the same planform dimensions.&lt;/p&gt;
-
-&lt;p&gt;The present investigation shows that the formation and evolution of vapor bubbles on the heated surface can be substantially altered by a highly directional ultrasound (1.7 MHz) beam, and lead to significant enhancement in heat transfer, including reduced surface superheat and increased CHF.&lt;/p&gt;
-
-&lt;p&gt;Heat transfer enhancement characterized by changes in the boiling curve (i.e., superheat) varies with surface texturing and is also dependent on acoustic beam orientation relative to the surface texture pattern.&lt;/p&gt;
-</description>
+      <description>Boiling heat transfer on submerged textured heated surfaces is enhanced using ultrasound actuation. The heated surface is textured using an array of open microchannels that advantageously separate the nucleation sites on the surface and inhibit the transition to film boiling, which significantly increases the critical heat flux compared to a smooth surface of the same planform dimensions.
+The present investigation shows that the formation and evolution of vapor bubbles on the heated surface can be substantially altered by a highly directional ultrasound (1.</description>
     </item>
     
     <item>
@@ -29,14 +28,8 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.boziuk.com/project/enhanced-condensation/</guid>
-      <description>&lt;p&gt;Vapor bubbles are formed by direct injection into quiescent liquid in a sealed tank under controlled ambient pressure that varies from atmospheric to partial vacuum. The bubbles are injected vertically from a pressurized steam reservoir through nozzles of varying characteristic diameters, and the actuation is applied during different stages of the bubbles formation and advection.&lt;/p&gt;
-
-&lt;p&gt;It is shown that kHz range acoustic actuation leads to excitation of high-amplitude surface capillary (Faraday) waves at the vapor-liquid interface that significantly increases the condensation rate. The increase in condensation rate is affected by the surface waves that increase the mixing in the thermal boundary layer surrounding the bubble, which can be confirmed using Schlieren images.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.boziuk.com/img/condensation_example_khz.png&#34; alt=&#34;khz enhanced condensation&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ultrasonic acoustic actuation may also be used for condensation enhancement. While kHz-range acoustic actuation typically couples to capillary instability of the vapor-liquid interface, ultrasonic (MHz-range) actuation leads to the formation of a liquid spout that penetrates into the vapor bubble and significantly increases its surface area and therefore condensation rate.  Focusing of the ultrasonic beam along the spout leads to ejection of small-scale droplets from that are propelled towards the vapor liquid interface and result in localized acceleration of the condensation.&lt;/p&gt;
-</description>
+      <description>Vapor bubbles are formed by direct injection into quiescent liquid in a sealed tank under controlled ambient pressure that varies from atmospheric to partial vacuum. The bubbles are injected vertically from a pressurized steam reservoir through nozzles of varying characteristic diameters, and the actuation is applied during different stages of the bubbles formation and advection.
+It is shown that kHz range acoustic actuation leads to excitation of high-amplitude surface capillary (Faraday) waves at the vapor-liquid interface that significantly increases the condensation rate.</description>
     </item>
     
     <item>

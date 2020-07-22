@@ -4,7 +4,7 @@
     
     
     <url>
-      <loc>http://www.boziuk.com/publication/enhanced-boiling-IJHMT/</loc>
+      <loc>http://www.boziuk.com/publication/enhanced-boiling-ijhmt/</loc>
       <lastmod>2017-05-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +36,7 @@
     
     
     <url>
-      <loc>http://www.boziuk.com/post/APS-GFM/</loc>
+      <loc>http://www.boziuk.com/post/aps-gfm/</loc>
       <lastmod>2016-12-01T10:00:00+00:00</lastmod>
     </url>
     
@@ -85,6 +85,11 @@
   
     
     
+    <url>
+      <loc>http://www.boziuk.com/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
   
     
     
@@ -108,6 +113,7 @@
     
     <url>
       <loc>http://www.boziuk.com/publication_types/</loc>
+      <lastmod>2017-05-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -116,6 +122,7 @@
     
     <url>
       <loc>http://www.boziuk.com/tags/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

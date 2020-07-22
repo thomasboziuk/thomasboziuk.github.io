@@ -2,13 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Boziuk</title>
-    <link>http://www.boziuk.com/home/index.xml</link>
+    <link>http://www.boziuk.com/home/</link>
     <description>Recent content in Homes on Boziuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Thomas Boziuk</copyright>
     <lastBuildDate>Thu, 18 Jan 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.boziuk.com/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://www.boziuk.com/home/about/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/home/about/</guid>
+      <description>Biography I&amp;rsquo;m a researcher, primarily interested in the enhancement of two-phase heat transfer, and an educator, interested in effective teaching of the thermal-fluid sciences. Formerly, I was a graduate student in the school of mechanical engineering at the Georgia Institute of Technology, where I was a member of the Fluid Mechanics Research Laboratory under the direction of Dr. Ari Glezer beginning in 2009.
+My research work focuses on experimental investigation on the use of acoustic actuation as a method for enhancing the phase-change heat transfer processes of boiling and condensation.</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>http://www.boziuk.com/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>http://www.boziuk.com/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://www.boziuk.com/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://www.boziuk.com/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/home/contact/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
