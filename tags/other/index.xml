@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on Boziuk</title>
+    <link>http://www.boziuk.com/tags/other/</link>
+    <description>Recent content in Other on Boziuk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Thomas Boziuk</copyright>
+    
+	<atom:link href="http://www.boziuk.com/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Personal Projects</title>
+      <link>http://www.boziuk.com/project/various-personal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/project/various-personal/</guid>
+      <description>Some other personal projects of interest:
+ Sound board app with numpad keybinds. Useful for adding sound effects when recording, if the system sound is routed to an input (i.e., using jack, Cadence, Ardour, and other packages from the KXStudio project.)
+https://github.com/thomasboziuk/soundboard  </description>
+    </item>
+    
+  </channel>
+</rss>
