@@ -19,7 +19,9 @@
       <guid>http://www.boziuk.com/project/various-personal/</guid>
       <description>Some other personal projects of interest:
  Sound board app with numpad keybinds. Useful for adding sound effects when recording, if the system sound is routed to an input (i.e., using jack, Cadence, Ardour, and other packages from the KXStudio project.)
-https://github.com/thomasboziuk/soundboard  </description>
+https://github.com/thomasboziuk/soundboard
+ &amp;ldquo;Muse Finder&amp;rdquo; function set, reminiscent of weird websites from the 90&amp;rsquo;s. Based on someone&amp;rsquo;s birthday, you are able to find their &amp;ldquo;muses.&amp;rdquo;
+Who are someone&amp;rsquo;s muses? Well, they&amp;rsquo;re the two leading actors, of the top grossing movie, of the box-office week they were born.</description>
     </item>
     
   </channel>

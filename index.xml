@@ -125,8 +125,12 @@
       <description>&lt;p&gt;Some other personal projects of interest:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Sound board app with numpad keybinds. Useful for adding sound effects when recording, if the system sound is routed to an input (i.e., using jack, Cadence, Ardour, and other packages from the &lt;a href=&#34;https://kx.studio&#34; target=&#34;_blank&#34;&gt;KXStudio project&lt;/a&gt;.)&lt;br /&gt;
-&lt;a href=&#34;https://github.com/thomasboziuk/soundboard&#34; target=&#34;_blank&#34;&gt;https://github.com/thomasboziuk/soundboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sound board app with numpad keybinds. Useful for adding sound effects when recording, if the system sound is routed to an input (i.e., using jack, Cadence, Ardour, and other packages from the &lt;a href=&#34;https://kx.studio&#34; target=&#34;_blank&#34;&gt;KXStudio project&lt;/a&gt;.)&lt;br /&gt;
+&lt;a href=&#34;https://github.com/thomasboziuk/soundboard&#34; target=&#34;_blank&#34;&gt;https://github.com/thomasboziuk/soundboard&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;ldquo;Muse Finder&amp;rdquo; function set, reminiscent of weird websites from the 90&amp;rsquo;s. Based on someone&amp;rsquo;s birthday, you are able to find their &amp;ldquo;muses.&amp;rdquo;&lt;br /&gt;
+Who are someone&amp;rsquo;s muses? Well, they&amp;rsquo;re the two leading actors, of the top grossing movie, of the box-office week they were born. &lt;em&gt;Obviously!&lt;/em&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/thomasboziuk/muse_finder&#34; target=&#34;_blank&#34;&gt;https://github.com/thomasboziuk/muse_finder&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
