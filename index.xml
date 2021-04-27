@@ -61,7 +61,7 @@
 
 &lt;h2 id=&#34;make-your-boot-routine&#34;&gt;Make your boot routine&lt;/h2&gt;
 
-&lt;p&gt;The main purpose of the boot routine is to connect to your wifi network. The code can be viewed on my &lt;a href=&#34;ADD GITHUB LINK&#34; target=&#34;_blank&#34;&gt;github for the ESP32 components&lt;/a&gt;. There&amp;rsquo;s nothing to it. Note that you may want to look into reserving a static IP for this device if you have connectivity issues; sometimes this can be a solution.&lt;/p&gt;
+&lt;p&gt;The main purpose of the boot routine is to connect to your wifi network. The code can be viewed on my &lt;a href=&#34;https://github.com/thomasboziuk/scratchwork&#34; target=&#34;_blank&#34;&gt;github for the ESP32 components&lt;/a&gt; under the micropython_scratch folder. There&amp;rsquo;s nothing to it. Note that you may want to look into reserving a static IP for this device if you have connectivity issues; sometimes this can be a solution.&lt;/p&gt;
 
 &lt;h2 id=&#34;make-your-main-routine&#34;&gt;Make your main routine&lt;/h2&gt;
 
@@ -93,7 +93,7 @@
     }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;And now &lt;a href=&#34;LINKS&#34; target=&#34;_blank&#34;&gt;check the github here&lt;/a&gt; for details on the ini file. And look at post #3 for details on when we set up a similar system for the first time. Hopefully you&amp;rsquo;re used to things like the python virtual environment by now (a benefit of using it for each individual task). We will of course have to make a system process as well using systemctl, to make sure we&amp;rsquo;ve always got something running, ready to receive a request on the socket.&lt;/p&gt;
+&lt;p&gt;And now &lt;a href=&#34;https://github.com/thomasboziuk/scratchwork&#34; target=&#34;_blank&#34;&gt;check the github here&lt;/a&gt; under the home_plotting folder for details on the ini file. And look at post #3 for details on when we set up a similar system for the first time. Hopefully you&amp;rsquo;re used to things like the python virtual environment by now (a benefit of using it for each individual task). We will of course have to make a system process as well using systemctl, to make sure we&amp;rsquo;ve always got something running, ready to receive a request on the socket.&lt;/p&gt;
 
 &lt;p&gt;But uh, how do we plot something&amp;hellip;?&lt;/p&gt;
 
@@ -156,7 +156,7 @@
 
 &lt;p&gt;Actually, I don&amp;rsquo;t start by writing a python script, I  make a virtual environment, just like we did previously. Since this is kinda-sorta a separate process, you could see it being run on a different system &amp;ndash; so let&amp;rsquo;s keep good habits and define a virtual environment so we know exactly what packages we need, what versions, etc so things don&amp;rsquo;t break. This script is simple enough that it&amp;rsquo;s not likely to be relevant, but I&amp;rsquo;ve heard this is a good habit. Name the environment and the script something logical.&lt;/p&gt;
 
-&lt;p&gt;You can view the final product at &lt;strong&gt;&lt;em&gt;ADD GITHUB LINK&lt;/em&gt;&lt;/strong&gt; . It&amp;rsquo;s quite simple: like before, we need to import requests to help parse an http response, and import the tools for connecting to our SQL database. Then we simply make 1 call to openweathermap&amp;rsquo;s API, parse the response, and insert it into our database. Easy! Like before, you should not hard-code an API key, nor the SQL database credentials, but&amp;hellip; I did, and God hasn&amp;rsquo;t struck me down yet.&lt;/p&gt;
+&lt;p&gt;You can view the final product at &lt;a href=&#34;https://github.com/thomasboziuk/scratchwork&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt; under the &amp;ldquo;weatherGather&amp;rdquo; folder . It&amp;rsquo;s quite simple: like before, we need to import requests to help parse an http response, and import the tools for connecting to our SQL database. Then we simply make 1 call to openweathermap&amp;rsquo;s API, parse the response, and insert it into our database. Easy! Like before, you should not hard-code an API key, nor the SQL database credentials, but&amp;hellip; I did, and God hasn&amp;rsquo;t struck me down yet.&lt;/p&gt;
 
 &lt;h2 id=&#34;set-the-cron-job-to-execute&#34;&gt;Set the cron job to execute&lt;/h2&gt;
 
@@ -238,7 +238,7 @@ It should now be ready for use.&lt;/p&gt;
 pip install SQLAlchemy Flask-RESTful Flask-HTTPAuth psycopg2 #SQLAlchemy will require psycopg2 to be installed. Flask-RESTful and Flask-HTTPAuth will be used for authenticating requests and parsing HTTP POST requests.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Now we can work on the python code itself. The example is hosted at &lt;strong&gt;&lt;em&gt;ADD GITHUB LINK&lt;/em&gt;&lt;/strong&gt;. Essentially, we have two tasks to accomplish: receive and authenticate the request to update the SQL table, and then update the SQL table. This is all wrapped within a flask framework. Luckily, there are several packages that make these tasks easy. Take a glance through the code, there&amp;rsquo;s very little to it. The libraries are doing the heavy lifting!&lt;/p&gt;
+&lt;p&gt;Now we can work on the python code itself. The example is hosted at &lt;a href=&#34;https://github.com/thomasboziuk/scratchwork&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; under the &amp;ldquo;SQL_API&amp;rdquo; folder. Essentially, we have two tasks to accomplish: receive and authenticate the request to update the SQL table, and then update the SQL table. This is all wrapped within a flask framework. Luckily, there are several packages that make these tasks easy. Take a glance through the code, there&amp;rsquo;s very little to it. The libraries are doing the heavy lifting!&lt;/p&gt;
 
 &lt;p&gt;We have to define what we want to happen in our REST API: in our case, we just make a simple test case for a get request, and define a parser that will parse the message uploaded in an incoming post request. Once we parse that data, we insert it into the SQL database. If you wanted, you could clean up my code: the way that the SQLAlchemy is sending the request is not very pythonic, but it works fine for our simple example. If you were doing a lot of database work in python, you should consider reading the SQLAlchemy docs and writing your code in a way that fits with python a bit better.&lt;/p&gt;
 
