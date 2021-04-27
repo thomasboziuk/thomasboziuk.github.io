@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+	<meta name="google-site-verification" content="1yydbfHFPjvJEEhqNSgsgEe4HjpBBWiuXIIxM5P5gAY" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.40" />
+  <meta name="author" content="Dr. Thomas Boziuk">
+  <meta name="description" content="Thermal-Fluid Science Researcher">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom_sidenote.css">
+  
+
+  <link rel="alternate" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+  <link rel="feed" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.boziuk.com/post/weathercollectionframework4/">
+
+  
+
+  <title>Scratchwork.xyz, Part 4: Database and simple REST API | Boziuk</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Boziuk</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Scratchwork.xyz, Part 4: Database and simple REST API</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2020-12-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Dec 27, 2020
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework4%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Scratchwork.xyz%2c%20Part%204%3a%20Database%20and%20simple%20REST%20API&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework4%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework4%2f&amp;title=Scratchwork.xyz%2c%20Part%204%3a%20Database%20and%20simple%20REST%20API"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework4%2f&amp;title=Scratchwork.xyz%2c%20Part%204%3a%20Database%20and%20simple%20REST%20API"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Scratchwork.xyz%2c%20Part%204%3a%20Database%20and%20simple%20REST%20API&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework4%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="prepare-a-user-for-the-database-and-a-database">Prepare a user for the database and a database</h2>
+
+<p>You could continue to ssh into your server, then run psql, and set up a table schema that way. In fact, I recommend ssh&rsquo;ing right now for two reasons: to add a user to linux that will be used as a dummy to reduce the permissions in the sql server. Call it say, esp32User. It doesn&rsquo;t need sudo privileges. Then, go back to <a href="https://data36.com/data-coding-101-install-python-sql-r-bash/" target="_blank">Tomi&rsquo;s tutorial</a> and review where he sets up a postgress username for his main user: this time, do it for the esp32User account. For subsequent tasks, I find it useful to use pgAdmin from my desktop, since the schema can sometimes be important and you can visually check that everything&rsquo;s working correctly.</p>
+
+<p>Open up pgAdmin and set up a server with the name of the website. Then, I create the database &ldquo;API_server_database.&rdquo; Then, click through schemas and then public and look for tables. Right click and create the table &ldquo;esp32data.&rdquo; This is where the esp32 will be able to insert data.</p>
+
+<p>My table has columns for:</p>
+
+<ul>
+<li>time (timestamp without timezone, where I set under &ldquo;constraints&rdquo; the default value to be CURRENT_TIMESTAMP. This will basically log what time the data was received by the server, which for my purposes is as good as having the esp32 report something)</li>
+<li>location (char var. The esp32 can tell us where it is, although it&rsquo;s hard-coded in micropython to be &ldquo;desk&rdquo;</li>
+<li>temperature (double precision)</li>
+<li>humidity (double precision)</li>
+<li>pressure (double precision)</li>
+<li>wetness (double precision, although this is not used by my esp32 &ndash; my esp8266 in the basement uses this to check for leaks)</li>
+</ul>
+
+<p>You will want to, in the table properties, under the security tab grant INSERT and SELECT options to your distinct psql username (esp32User). This means if someone somehow gains access to the esp32, they will not be able to delete any data from your SQL database by sending other requests. <span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+This will also be precluded by our REST API, as we will see later.
+</span>
+</span>
+It should now be ready for use.</p>
+
+<h2 id="build-a-rest-api">Build a REST API</h2>
+
+<p>Our postgres SQL system is allows remote connections to the host, so we could have users updating our tables from other locations. In fact, as you might expect, <a href="https://github.com/ethanak/SimplePgSQL" target="_blank">you could insert values directly to the table from the microcontroller</a> relatively simply. The linked codebase was written for an esp8266 and in the C-based Arduino language, but those are minor details. So why don&rsquo;t we do this?</p>
+
+<p>The first reason is that I didn&rsquo;t know I could do a remote connection on such a simple device as an esp32 until I started this project, because I hadn&rsquo;t worked with SQL much. The second reason is better: an additional layer of authentication and security. Remember, the esp devices are not particularly secure, unfortunately. If someone gained access to the physical device, I would like to limit the amount of interaction they have with the server. I&rsquo;ll do this by implimenting a python-based REST API as an intermediary. This also simplifies the esp32&rsquo;s job, because it only needs to interact with the outside world using http requests.</p>
+
+<p>REST stands for representational state transfer, and these systems are ubiquitous on the internet. If you need to interact with a 3rd-party API, it will probably be through a REST api. If you are going to build your own: it makes sense for it to be a REST api. Ours will be simple to build because we don&rsquo;t need to add too many capabilities.</p>
+
+<p>The first thing we want to do is pick a URL for interaction with the API. In my case, I just chose the Scratchwork.xyz/SQL_API. We want to then go into the site map we set up in nginx, located in /etc/nginx/sites-available/$YOUR_SITE_NAME and add an entry ABOVE the default home (&ldquo;/&rdquo;) location thusly:</p>
+
+<pre><code>location /SQL_API {
+	include uwsgi_params;
+	uwsgi_pass unix:home/$USER_NAME/SQL_API/SQL_API.sock;
+}
+</code></pre>
+
+<p>As currently configured, nginx looks through this list in order, falling back on the most general location if a specific location isn&rsquo;t available. So when a request ends up at our server looking to interact with the location Scratchwork.xyz/SQL_API, it will now get routed to the uwsgi socket SQL_API, which is exactly what we want.</p>
+
+<p>Now, we need to make sure the python code on the other side of that socket is actually doing something useful!</p>
+
+<p>We should already have the flask framework set up from the previous tutorial. But now, rather than serving a static html page, we&rsquo;ll have some interaction depending on what request we get. We&rsquo;re going to use SQLAlchemy package to forward the API requests to the SQL server, so first thing&rsquo;s first: from the command line on your server, add SQLALchemy and other useful packages to the virtual environment for this service:</p>
+
+<pre><code class="language-bash">source $PROJECT_NAME_ENV/bin/activate
+pip install SQLAlchemy Flask-RESTful Flask-HTTPAuth psycopg2 #SQLAlchemy will require psycopg2 to be installed. Flask-RESTful and Flask-HTTPAuth will be used for authenticating requests and parsing HTTP POST requests.
+</code></pre>
+
+<p>Now we can work on the python code itself. The example is hosted at <strong><em>ADD GITHUB LINK</em></strong>. Essentially, we have two tasks to accomplish: receive and authenticate the request to update the SQL table, and then update the SQL table. This is all wrapped within a flask framework. Luckily, there are several packages that make these tasks easy. Take a glance through the code, there&rsquo;s very little to it. The libraries are doing the heavy lifting!</p>
+
+<p>We have to define what we want to happen in our REST API: in our case, we just make a simple test case for a get request, and define a parser that will parse the message uploaded in an incoming post request. Once we parse that data, we insert it into the SQL database. If you wanted, you could clean up my code: the way that the SQLAlchemy is sending the request is not very pythonic, but it works fine for our simple example. If you were doing a lot of database work in python, you should consider reading the SQLAlchemy docs and writing your code in a way that fits with python a bit better.</p>
+
+<p>I&rsquo;ll give a big warning that you would want a more secure way to authenticate, both in terms of creating the connection string <span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+The connection string uses the domain localhost, but if this process were on a different physical server, we could use the IP address or the custom domain where postgres was installed.
+</span>
+</span>
+that&rsquo;s used to authenticate with Postgres, as well as storing the acceptable username+password combinations for our REST Api. I&rsquo;ll let you go to other sources for best practices on that.</p>
+
+<p>The most important thing here is the definition of &ldquo;post&rdquo; under the class &ldquo;SQL_interaction.&rdquo;</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.boziuk.com/post/weathercollectionframework3/"><span
+      aria-hidden="true">&larr;</span> Scratchwork.xyz, Part 3: Get a website running</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.boziuk.com/post/weathercollectionframework5/">Scratchwork.xyz, Part 5: Gathering external weather data using external APIs <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Thomas Boziuk &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

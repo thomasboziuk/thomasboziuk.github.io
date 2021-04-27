@@ -11,6 +11,463 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Scratchwork.xyz, Part 8: Wrapping up, extending capabilities</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework8/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework8/</guid>
+      <description>
+
+&lt;h2 id=&#34;congrats-we-did-something-difficult&#34;&gt;Congrats! We did something difficult!&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve followed along, you&amp;rsquo;ve taken part in one of the more rewarding personal projects I&amp;rsquo;ve ever done. The best part about doing all this was that I learned quite a bit about how to set up a host/client system, and understand better the difficulties in setting up a data collection and analysis framework. It was pretty far outside my wheelhouse but well-worth the effort, and hopefully you feel the same way.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;re not limited to BME280 data of course: we could collect all sorts of data and store it for future research using these methods. And we&amp;rsquo;re not limited to our little dash plot landing page: you could do plenty of other stuff using the flask framework. It wouldn&amp;rsquo;t be too hard from here to add users who could sign in and look at their own personal data, for example (like on adafruit.io).&lt;/p&gt;
+
+&lt;h2 id=&#34;a-personal-extension&#34;&gt;A personal extension&lt;/h2&gt;
+
+&lt;p&gt;So what have I done to extend this further? It might seem silly or mundane to you, but I put a lot of effort into planting some grass seed last year. I noticed after a recent dry spell that it wasn&amp;rsquo;t looking too well. So, I added a cron job that computes the rainfall in the last week and sends me an email on Saturday mornings, telling me how much rainfall we got in the last week, how much I&amp;rsquo;d have to add to get that value up to 1 inch, and how for long it thinks I should run a sprinkler to accomplish that. I don&amp;rsquo;t have to think about the grass at all until I get that e-mail coming in.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+ I still think about the grass, constantly, but I don&#39;t have to, and that makes all the difference... 
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Other extentions weren&amp;rsquo;t as successful, like the time I tried to use the phase lag between the exterior temperature and the interior temperature to compute the thermal mass of the house. I got a number, assuming a lumped capacitance model, but it didn&amp;rsquo;t seem to be very meaningful. Turns out sometimes models need a bit more fidelity than the simplest approach&amp;hellip; but I didn&amp;rsquo;t know that &lt;em&gt;until&lt;/em&gt; I had the data to check!&lt;/p&gt;
+
+&lt;h2 id=&#34;the-end&#34;&gt;The end&lt;/h2&gt;
+
+&lt;p&gt;I realize that the level of detail dropped as the project description went on. That was partially intentional: since a lot of tasks build on previous ones, hopefully less detail is required, because you can always go back to prior material. However, if you think any one part in particular desserves more explanation, try to contact me, and I&amp;rsquo;ll either describe it better for you, or perhaps even update this website. But most importantly&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I hope you had fun! I did! :-D&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 7: The ESP32</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework7/</link>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework7/</guid>
+      <description>
+
+&lt;h2 id=&#34;wire-up-your-esp32-and-bme280&#34;&gt;Wire up your ESP32 and BME280&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve messed around with microcontrollers, this will all be easy. In fact, the hardest part is intalling micropython onto the ESP32. A little walkthrough is provided by &lt;a href=&#34;https://docs.micropython.org/en/latest/esp32/tutorial/intro.html&#34; target=&#34;_blank&#34;&gt;micropython themselves&lt;/a&gt;. I like to use the program Thonny to communiate with the controller from my desktop. There&amp;rsquo;s a little Thonny tutorial at &lt;a href=&#34;https://randomnerdtutorials.com/getting-started-thonny-micropython-python-ide-esp32-esp8266/&#34; target=&#34;_blank&#34;&gt;random nerd tutorials&lt;/a&gt; if you&amp;rsquo;re interested.&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;rsquo;ve confirmed that micropython is working (check with a simple blink program or something), you&amp;rsquo;ll wire up the BME280 breakout board. I like to use Adafruit&amp;rsquo;s libraries and tutorials, so I suppose it&amp;rsquo;s only fair to buy a board from them as well. They have a writeup on using the BME280 with micropython &lt;a href=&#34;https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test&#34; target=&#34;_blank&#34;&gt;here on their website&lt;/a&gt;. If you&amp;rsquo;re really strapped for cash, there are cheaper BME280 breakout boards available, as well. Confirm that you can print the values.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-your-boot-routine&#34;&gt;Make your boot routine&lt;/h2&gt;
+
+&lt;p&gt;The main purpose of the boot routine is to connect to your wifi network. The code can be viewed on my &lt;a href=&#34;ADD GITHUB LINK&#34; target=&#34;_blank&#34;&gt;github for the ESP32 components&lt;/a&gt;. There&amp;rsquo;s nothing to it. Note that you may want to look into reserving a static IP for this device if you have connectivity issues; sometimes this can be a solution.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-your-main-routine&#34;&gt;Make your main routine&lt;/h2&gt;
+
+&lt;p&gt;The main routine will include a little more &amp;ldquo;front stuff&amp;rdquo;: imports that belong here rather than in the boot routine, for example. I also add a script just to blink an LED to make sure I know the device has reset when I click the reset button (useful during troubleshooting or updating your scripts). The front stuff also includes the header information, including authentication for the http post request.&lt;/p&gt;
+
+&lt;p&gt;A note on this important package, urequests: this is our tool for sending our http POST request to our server. It&amp;rsquo;s worth noting that I believe it will honor an https request, making the POST encypted. Even though we&amp;rsquo;re &amp;ldquo;encoding&amp;rdquo; in base64 the username+password combination that lets us submit an authenticated POST to our API, this is not an encrypted encoding!!! We are relying on the https encryption. Also, my understanding is that you might have issues if you use an ESP8266, because it does not have enough memory to support certificate verification. Unfortunately, most of the documentation that I&amp;rsquo;ve been able to find on this issue has been spotty, and I haven&amp;rsquo;t spent the time double-checking that my connection is secure. This is part of why we used an intermediate python script on the server to ensure the ESP32 is not directly connecting to the SQL database, as well as made sure that the python script was using SQL credentials that have limited abilities.&lt;/p&gt;
+
+&lt;p&gt;The main routine then goes into a &amp;ldquo;while True:&amp;rdquo; section, which is much like the &amp;ldquo;void loop&amp;rdquo; section when you&amp;rsquo;re using the C-based Arduino programming language. First we check if we&amp;rsquo;re still connected to wifi, and remedy the situation if we&amp;rsquo;re not. Then, the data collection is simple with the Adafruit BME280 packages: once you set up the pin parameters for i2c communication, you can just sample the values using bme.temperature, bme.humidity, etc. I do some slight formatting before taking a ~20 second average reading, then format my http post request. We post that, with a try-catch loop (I had had some problems with sockets not closing: this remedied that. It may not be strictly necessary). Then, I free up memory, which again may not be necessary. Since I leave this ESP32 running for months at a time, I want to be sure it&amp;rsquo;ll keep working without my checking on it!&lt;/p&gt;
+
+&lt;p&gt;This post request is sent off to the server that we already set up. If everything previous to this was done correctly, it&amp;rsquo;ll be inserted into the SQL database, and become data available for plotting when people visit the landing page of the website.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 6: Plotting for website visitors using Dash</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework6/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework6/</guid>
+      <description>
+
+&lt;h2 id=&#34;prepare-a-new-uwsgi-ini-socket-python-file-python-virtualenv-and-reference-in-our-nginx-site-map&#34;&gt;Prepare a new uwsgi ini, socket, python file, python virtualenv  and reference in our nginx site map.&lt;/h2&gt;
+
+&lt;p&gt;I want visitors to the website to see data from the past week. Because I don&amp;rsquo;t want them to have to know anything about the site map, I want this data to be displayed when someone lands on the root domain. We&amp;rsquo;ll name this process something logical, like &amp;ldquo;home_plotting&amp;rdquo; or something to that effect. So, first I&amp;rsquo;ll have to adjust the /etc/nginx/sites-available/$DOMAIN_NAME so that users landing on the root domain end up at the right socket/process. Easily done in a similar manner to our SQL_API subdomain, we just need something that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;location  / {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/$USER_NAME/home_plotting/home_plotting.sock;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And now &lt;a href=&#34;LINKS&#34; target=&#34;_blank&#34;&gt;check the github here&lt;/a&gt; for details on the ini file. And look at post #3 for details on when we set up a similar system for the first time. Hopefully you&amp;rsquo;re used to things like the python virtual environment by now (a benefit of using it for each individual task). We will of course have to make a system process as well using systemctl, to make sure we&amp;rsquo;ve always got something running, ready to receive a request on the socket.&lt;/p&gt;
+
+&lt;p&gt;But uh, how do we plot something&amp;hellip;?&lt;/p&gt;
+
+&lt;h2 id=&#34;use-flask-dash-to-create-a-plot&#34;&gt;Use flask + dash to create a plot&lt;/h2&gt;
+
+&lt;p&gt;If you made a virtualenv and python file similar to that for the SQL_API, you should already have flask installed. We will be using &lt;a href=&#34;https://dash.plotly.com/&#34; target=&#34;_blank&#34;&gt;dash&lt;/a&gt; to make our plot. Honestly, I recommend following along through the tutorial available on that website prior to going any further, just to familiarize yourself with dash in general.&lt;/p&gt;
+
+&lt;p&gt;Then, take a gander at this post at &lt;a href=&#34;https://hackersandslackers.com/plotly-dash-with-flask/&#34; target=&#34;_blank&#34;&gt;hackers and slackers&lt;/a&gt;. I used this as a base to get flask working with dash. Why go to this trouble? It&amp;rsquo;s probably unnecessary for my website, but what if I wanted to do some more sophisticated python stuff on the website, and still have it handled by flask? I don&amp;rsquo;t want to throw flask out yet and live in only dash world&amp;hellip; I&amp;rsquo;m not ready for that!&lt;/p&gt;
+
+&lt;p&gt;If you take a look through my python script, you&amp;rsquo;ll see it&amp;rsquo;s a hacked together, chimeric version from the dash tutorial and hackers and slackers, so ugly it probably is or should be illegal in 30 states. Anyways, it works. I want to make a few points about it:&lt;/p&gt;
+
+&lt;p&gt;First, a lot of dash tutorials will not use a separate wsgi.py file. The main thing I cribbed from hackers and slackers was keeping that, which I like because it keeps the general file structure for this process (serving data to a visitor) the same as the one used for having an SQL API ready and listening for new data. It could in theory make things more flexible, although I don&amp;rsquo;t use that capability at all.&lt;/p&gt;
+
+&lt;p&gt;Second, we have to make a database connection yet again to get the data from last week. We&amp;rsquo;ve done that a few times before, but I wanted to point it out.&lt;/p&gt;
+
+&lt;p&gt;Third, I hate html. So I didn&amp;rsquo;t do anything fancy beyond the basic tutorial layout.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 5: Gathering external weather data using external APIs</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework5/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework5/</guid>
+      <description>
+
+&lt;h2 id=&#34;sign-up-at-openweathermap-org&#34;&gt;Sign up at openweathermap.org&lt;/h2&gt;
+
+&lt;p&gt;I want to compare our data gathered inside the house with the external weather&amp;hellip; but I don&amp;rsquo;t own a weather station (yet!). We could perhaps laboriously scrape it from a weather website, but that&amp;rsquo;s harder and considered &amp;ldquo;rude&amp;rdquo; at minimum and &amp;ldquo;not in agreement with the license&amp;rdquo; in more exacting terms as compared to simply signing up for and using a free-tier API from one of the various weather services. In my case, I signed up with &lt;a href=&#34;https://openweathermap.org&#34; target=&#34;_blank&#34;&gt;openweathermap.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s documentation on their website of all the various details of how often you can call their API, how many data points they&amp;rsquo;ll provide, and what different data is available. The most important part for our purposes is found &lt;a href=&#34;https://openweathermap.org/current&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, where they explain how to call their API for the current weather at a given location, and what the format of the response back will be. We&amp;rsquo;ll use python to form a request to send to their API, then parse the response before inserting it into a separate SQL table.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-a-separate-sql-table&#34;&gt;Make a separate SQL table&lt;/h2&gt;
+
+&lt;p&gt;Quickly &amp;ndash; using what you learned previously, make a separate SQL table. As before, I prefer to use pgAdmin&amp;rsquo;s GUI to make a new table, and set the initial schema. In my case, I decided to make entries for all of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;temperature&lt;/li&gt;
+&lt;li&gt;max temperature&lt;/li&gt;
+&lt;li&gt;minimum temperature&lt;/li&gt;
+&lt;li&gt;humidity&lt;/li&gt;
+&lt;li&gt;pressure&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;feels like&amp;rdquo; temperature&lt;/li&gt;
+&lt;li&gt;percentage of cloud cover&lt;/li&gt;
+&lt;li&gt;latitude&lt;/li&gt;
+&lt;li&gt;longitude (really I don&amp;rsquo;t need this every time, but it&amp;rsquo;s possible the available weather stations will change over time and this could shift)&lt;/li&gt;
+&lt;li&gt;sunrise&lt;/li&gt;
+&lt;li&gt;sunset&lt;/li&gt;
+&lt;li&gt;visibility distance&lt;/li&gt;
+&lt;li&gt;weather description&lt;/li&gt;
+&lt;li&gt;weather_gen (straight up cannot remember what this is)&lt;/li&gt;
+&lt;li&gt;wind direction&lt;/li&gt;
+&lt;li&gt;wind speed&lt;/li&gt;
+&lt;li&gt;time&lt;/li&gt;
+&lt;li&gt;cumulative rainfall within the last hour&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;write-the-python-script&#34;&gt;Write the python script&lt;/h2&gt;
+
+&lt;p&gt;Actually, I don&amp;rsquo;t start by writing a python script, I  make a virtual environment, just like we did previously. Since this is kinda-sorta a separate process, you could see it being run on a different system &amp;ndash; so let&amp;rsquo;s keep good habits and define a virtual environment so we know exactly what packages we need, what versions, etc so things don&amp;rsquo;t break. This script is simple enough that it&amp;rsquo;s not likely to be relevant, but I&amp;rsquo;ve heard this is a good habit. Name the environment and the script something logical.&lt;/p&gt;
+
+&lt;p&gt;You can view the final product at &lt;strong&gt;&lt;em&gt;ADD GITHUB LINK&lt;/em&gt;&lt;/strong&gt; . It&amp;rsquo;s quite simple: like before, we need to import requests to help parse an http response, and import the tools for connecting to our SQL database. Then we simply make 1 call to openweathermap&amp;rsquo;s API, parse the response, and insert it into our database. Easy! Like before, you should not hard-code an API key, nor the SQL database credentials, but&amp;hellip; I did, and God hasn&amp;rsquo;t struck me down yet.&lt;/p&gt;
+
+&lt;h2 id=&#34;set-the-cron-job-to-execute&#34;&gt;Set the cron job to execute&lt;/h2&gt;
+
+&lt;p&gt;We do have one additional step here, which is to set this to run on a defined schedule. The way to do that on a server which is continuously running is by using cron, a built-in utility that gets heavy use in linux. &lt;a href=&#34;https://en.wikipedia.org/wiki/Cron&#34; target=&#34;_blank&#34;&gt;Read more about cron here&lt;/a&gt;. First, while ssh&amp;rsquo;s to the server, edit the crontab:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will open your user&amp;rsquo;s &amp;ldquo;crontab,&amp;rdquo; the list (or table) of cron jobs. Then we need to add a new line to define 2 key points:
+* how frequently the operation will run
+* the command, and any arguments required&lt;/p&gt;
+
+&lt;p&gt;In our case, we want to run it every 15 minutes. Any more frequently, and we might not actually get new data from openweathermap, and just cause unnecessary load on both servers. A good way to check if you&amp;rsquo;ve got the right entries for a given repetition is to use &lt;a href=&#34;https://crontab.guru/&#34; target=&#34;_blank&#34;&gt;this awesome website&lt;/a&gt;. We then want the command to be the absolute path to our virtual environment&amp;rsquo;s python installation, and the argument to be the absolute path to the python script. So we end up adding this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*/15 * * * * /home/$USER_NAME/weatherGather/weatherGatherenv/bin/python /home/$USER_NAME/weatherGather/weatherGather.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, every 15 minutes we should be getting exterior weather data and storing it in an SQL table. Fantastic! But now we need a way to visualize our collected data, both local and exterior&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 4: Database and simple REST API</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework4/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework4/</guid>
+      <description>
+
+&lt;h2 id=&#34;prepare-a-user-for-the-database-and-a-database&#34;&gt;Prepare a user for the database and a database&lt;/h2&gt;
+
+&lt;p&gt;You could continue to ssh into your server, then run psql, and set up a table schema that way. In fact, I recommend ssh&amp;rsquo;ing right now for two reasons: to add a user to linux that will be used as a dummy to reduce the permissions in the sql server. Call it say, esp32User. It doesn&amp;rsquo;t need sudo privileges. Then, go back to &lt;a href=&#34;https://data36.com/data-coding-101-install-python-sql-r-bash/&#34; target=&#34;_blank&#34;&gt;Tomi&amp;rsquo;s tutorial&lt;/a&gt; and review where he sets up a postgress username for his main user: this time, do it for the esp32User account. For subsequent tasks, I find it useful to use pgAdmin from my desktop, since the schema can sometimes be important and you can visually check that everything&amp;rsquo;s working correctly.&lt;/p&gt;
+
+&lt;p&gt;Open up pgAdmin and set up a server with the name of the website. Then, I create the database &amp;ldquo;API_server_database.&amp;rdquo; Then, click through schemas and then public and look for tables. Right click and create the table &amp;ldquo;esp32data.&amp;rdquo; This is where the esp32 will be able to insert data.&lt;/p&gt;
+
+&lt;p&gt;My table has columns for:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;time (timestamp without timezone, where I set under &amp;ldquo;constraints&amp;rdquo; the default value to be CURRENT_TIMESTAMP. This will basically log what time the data was received by the server, which for my purposes is as good as having the esp32 report something)&lt;/li&gt;
+&lt;li&gt;location (char var. The esp32 can tell us where it is, although it&amp;rsquo;s hard-coded in micropython to be &amp;ldquo;desk&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;temperature (double precision)&lt;/li&gt;
+&lt;li&gt;humidity (double precision)&lt;/li&gt;
+&lt;li&gt;pressure (double precision)&lt;/li&gt;
+&lt;li&gt;wetness (double precision, although this is not used by my esp32 &amp;ndash; my esp8266 in the basement uses this to check for leaks)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You will want to, in the table properties, under the security tab grant INSERT and SELECT options to your distinct psql username (esp32User). This means if someone somehow gains access to the esp32, they will not be able to delete any data from your SQL database by sending other requests. &lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+This will also be precluded by our REST API, as we will see later.
+&lt;/span&gt;
+&lt;/span&gt;
+It should now be ready for use.&lt;/p&gt;
+
+&lt;h2 id=&#34;build-a-rest-api&#34;&gt;Build a REST API&lt;/h2&gt;
+
+&lt;p&gt;Our postgres SQL system is allows remote connections to the host, so we could have users updating our tables from other locations. In fact, as you might expect, &lt;a href=&#34;https://github.com/ethanak/SimplePgSQL&#34; target=&#34;_blank&#34;&gt;you could insert values directly to the table from the microcontroller&lt;/a&gt; relatively simply. The linked codebase was written for an esp8266 and in the C-based Arduino language, but those are minor details. So why don&amp;rsquo;t we do this?&lt;/p&gt;
+
+&lt;p&gt;The first reason is that I didn&amp;rsquo;t know I could do a remote connection on such a simple device as an esp32 until I started this project, because I hadn&amp;rsquo;t worked with SQL much. The second reason is better: an additional layer of authentication and security. Remember, the esp devices are not particularly secure, unfortunately. If someone gained access to the physical device, I would like to limit the amount of interaction they have with the server. I&amp;rsquo;ll do this by implimenting a python-based REST API as an intermediary. This also simplifies the esp32&amp;rsquo;s job, because it only needs to interact with the outside world using http requests.&lt;/p&gt;
+
+&lt;p&gt;REST stands for representational state transfer, and these systems are ubiquitous on the internet. If you need to interact with a 3rd-party API, it will probably be through a REST api. If you are going to build your own: it makes sense for it to be a REST api. Ours will be simple to build because we don&amp;rsquo;t need to add too many capabilities.&lt;/p&gt;
+
+&lt;p&gt;The first thing we want to do is pick a URL for interaction with the API. In my case, I just chose the Scratchwork.xyz/SQL_API. We want to then go into the site map we set up in nginx, located in /etc/nginx/sites-available/$YOUR_SITE_NAME and add an entry ABOVE the default home (&amp;ldquo;/&amp;rdquo;) location thusly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;location /SQL_API {
+	include uwsgi_params;
+	uwsgi_pass unix:home/$USER_NAME/SQL_API/SQL_API.sock;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As currently configured, nginx looks through this list in order, falling back on the most general location if a specific location isn&amp;rsquo;t available. So when a request ends up at our server looking to interact with the location Scratchwork.xyz/SQL_API, it will now get routed to the uwsgi socket SQL_API, which is exactly what we want.&lt;/p&gt;
+
+&lt;p&gt;Now, we need to make sure the python code on the other side of that socket is actually doing something useful!&lt;/p&gt;
+
+&lt;p&gt;We should already have the flask framework set up from the previous tutorial. But now, rather than serving a static html page, we&amp;rsquo;ll have some interaction depending on what request we get. We&amp;rsquo;re going to use SQLAlchemy package to forward the API requests to the SQL server, so first thing&amp;rsquo;s first: from the command line on your server, add SQLALchemy and other useful packages to the virtual environment for this service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;source $PROJECT_NAME_ENV/bin/activate
+pip install SQLAlchemy Flask-RESTful Flask-HTTPAuth psycopg2 #SQLAlchemy will require psycopg2 to be installed. Flask-RESTful and Flask-HTTPAuth will be used for authenticating requests and parsing HTTP POST requests.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we can work on the python code itself. The example is hosted at &lt;strong&gt;&lt;em&gt;ADD GITHUB LINK&lt;/em&gt;&lt;/strong&gt;. Essentially, we have two tasks to accomplish: receive and authenticate the request to update the SQL table, and then update the SQL table. This is all wrapped within a flask framework. Luckily, there are several packages that make these tasks easy. Take a glance through the code, there&amp;rsquo;s very little to it. The libraries are doing the heavy lifting!&lt;/p&gt;
+
+&lt;p&gt;We have to define what we want to happen in our REST API: in our case, we just make a simple test case for a get request, and define a parser that will parse the message uploaded in an incoming post request. Once we parse that data, we insert it into the SQL database. If you wanted, you could clean up my code: the way that the SQLAlchemy is sending the request is not very pythonic, but it works fine for our simple example. If you were doing a lot of database work in python, you should consider reading the SQLAlchemy docs and writing your code in a way that fits with python a bit better.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll give a big warning that you would want a more secure way to authenticate, both in terms of creating the connection string &lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+The connection string uses the domain localhost, but if this process were on a different physical server, we could use the IP address or the custom domain where postgres was installed.
+&lt;/span&gt;
+&lt;/span&gt;
+that&amp;rsquo;s used to authenticate with Postgres, as well as storing the acceptable username+password combinations for our REST Api. I&amp;rsquo;ll let you go to other sources for best practices on that.&lt;/p&gt;
+
+&lt;p&gt;The most important thing here is the definition of &amp;ldquo;post&amp;rdquo; under the class &amp;ldquo;SQL_interaction.&amp;rdquo;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 3: Get a website running</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework3/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework3/</guid>
+      <description>
+
+&lt;h2 id=&#34;serving-something-useful&#34;&gt;Serving something useful&lt;/h2&gt;
+
+&lt;h3 id=&#34;connect-the-domain-to-the-server&#34;&gt;Connect the domain to the server.&lt;/h3&gt;
+
+&lt;p&gt;If someone points their web browser to your custom domain, what would happen? Right now, the only thing would probably be a landing page from your registrar. You&amp;rsquo;ll need to make sure that the domain actually points to the IP address of your Digital Ocean server. Once it does, we can configure the server to actually, you know&amp;hellip; serve something.&lt;/p&gt;
+
+&lt;p&gt;Digital Ocean makes it pretty straight forward with their custom DNS servers. First, go to your &lt;strong&gt;namecheap&lt;/strong&gt; account, find the domain you bought, and click manage. We want to then change the nameservers to Custom DNS, pointing to DO&amp;rsquo;s nameservers.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+At the time of publication, these would be ns1.digitalocean.com, ns2.digitalocean.com, and ns3.digitalocean.com. 
+&lt;/span&gt;
+&lt;/span&gt;
+ Check out &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars&#34; target=&#34;_blank&#34;&gt;this tutorial&lt;/a&gt; for up-to-date DNS addresses or instructions for other registrars.&lt;/p&gt;
+
+&lt;p&gt;Then, we need to configure our Digital Ocean account. &lt;a href=&#34;https://www.digitalocean.com/docs/networking/dns/how-to/manage-records/&#34; target=&#34;_blank&#34;&gt;Check out this tutorial for details.&lt;/a&gt; Sign in and click on Networking on the left pane. Enter the domain for your project. If you have multiple droplets, make sure you&amp;rsquo;re adding it to the correct DO project. Then make sure there&amp;rsquo;s an A record where the hostname is $CUSTOM_DOMAIN.$TLD (TLD = top level domain, like .com or .xyz) and that it directs to your droplet&amp;rsquo;s IP address. You will most likely want to add a CNAME record where the hostname is www.$CUSTOM_DOMAIN.$TLD that is an alias of $CUSTOM_DOMAIN.$TLD. Now if a web brower is searching for your website, it should end up at the IP address of your droplet!&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+I&#39;m skipping this step so my ESP32 keeps pushing to the existing server. I&#39;ll come back and change this when everything is ready on the 20.04 droplet.
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;configure-a-test-nginx-webserver&#34;&gt;Configure a test NGINX webserver&lt;/h3&gt;
+
+&lt;p&gt;Of course your droplet won&amp;rsquo;t do much with an HTTP GET request from a browser yet. We are going to use NGINX to serve our website. Let&amp;rsquo;s try out the simplest option, based on &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04&#34; target=&#34;_blank&#34;&gt;this tutorial&lt;/a&gt;. First install nginx using apt &amp;ndash; our firewall should already be configured OK. Check that the nginx server is running using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl status nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If it&amp;rsquo;s running, then browsing to your server&amp;rsquo;s IP address should display the nginx test page. Fantastic! Now, we set up the server block as recommended in step 5 of the tutorial. Read that section and follow it carefully.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+We will need to modify the contents of server block later; we will use it as a map to hand off requests to one service or another depending on whether someone is trying to look at the graph at our data or trying to update the weather collection database.
+&lt;/span&gt;
+&lt;/span&gt;
+ Now, we should be able to view the example HTML file created in the tutorial if we access the website through the server IP address &lt;strong&gt;or&lt;/strong&gt; the website&amp;rsquo;s custom domain using an HTTP request.&lt;/p&gt;
+
+&lt;h3 id=&#34;get-a-certificate-from-let-s-encrypt-and-make-sure-https-addresses-work&#34;&gt;Get a certificate from Let&amp;rsquo;s Encrypt and make sure https addresses work.&lt;/h3&gt;
+
+&lt;p&gt;We want to enable https for our server. To do that, we&amp;rsquo;ll use &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04&#34; target=&#34;_blank&#34;&gt;another tutorial&lt;/a&gt;. Again, our firewall should still be configured to allow the correct traffic (this time, on port 443 for https). Certbot makes it relatively easy to manage the Let&amp;rsquo;s Encrypt certificates. Following the tutorial should be no problem; verify that your browser doesn&amp;rsquo;t have any problem seeing the test page using https.&lt;/p&gt;
+
+&lt;h3 id=&#34;get-nginx-to-serve-a-test-site-using-flask&#34;&gt;Get NGINX to serve a test site using flask.&lt;/h3&gt;
+
+&lt;p&gt;Because we&amp;rsquo;re eventually going to plot data using python, we will also serve the website using a python framework: flask, the simplest one. Let&amp;rsquo;s make sure we can get flask working with nginx, rather than serving the static html test page we&amp;rsquo;ve been responding with so far.&lt;/p&gt;
+
+&lt;p&gt;Yet again, our incremental step has us following another &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04&#34; target=&#34;_blank&#34;&gt;Digital Ocean tutorial&lt;/a&gt;. Hopefully, these steps are small enough and the tutorials verbose enough that there aren&amp;rsquo;t too many knowledge gaps being leapt over. This tutorial introduces a new concept that we&amp;rsquo;ll make use of several times in the future: Python virtual environments. You should make a folder to serve as a home base for the python code in this virtual environment, and then create a new environment using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python3 -m venv $PROJECT_NAME_ENV #use a logical name here: match it with the folder structure, and make sure that it&#39;s as descriptive as possible to what its end use will be.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You enter a virtual environment using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;source $PROJECT_NAME_ENV/bin/activate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which you can confirm by looking at the domain prefix in your terminal.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+You can leave this as a test environment/process, or name it something like SQL_API -- that&#39;s what it&#39;ll become in the next post in this series.
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now that you&amp;rsquo;re inside the virtual environment, &lt;strong&gt;which you specified to be python 3 when creating it&lt;/strong&gt;, all the python-related commands that are appended with 3 in ubuntu don&amp;rsquo;t need it any more &amp;ndash; i.e., instead of using pip3 to install the python3 version of a package, you install it using pip. Confusing? You get used to it&amp;hellip; after troubleshooting things.&lt;/p&gt;
+
+&lt;p&gt;You can follow the tutorial to make a simple python app.&lt;/p&gt;
+
+&lt;p&gt;Then, you&amp;rsquo;ll have to get uwsgi working. I like to think of nginx+uwsgi as a translater between the internet (http) world, and our own server&amp;rsquo;s python world. Once we have the uwsgi.ini file set up&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+If you ever need to troubleshoot a web service, I recommend changing the number of workers to 1 by making the line &#39;processes = 1&#39;. This will ensure that you&#39;re always interacting with the same worker as you send + receive test data. Otherwise, you are not guaranteed to be interacting with the same process, and they don&#39;t share memory: if you are storing and recalling data, it will act weird if you are alternating between processes. This behavior took me days to troubleshoot when testing a simple memory-based database storage/retrieval REST API.
+&lt;/span&gt;
+&lt;/span&gt;
+, we can configure a system service to start our virtual environment + uwsgi + python file so the server automatically is ready to handle incoming requests. Once we set things up as a service, we can treat it like other system services (i.e., use systemctl and journalctl commands to control and troubleshoot). This requires making a .service file in the /etc/systemd/system/ folder and then running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo systemctl start $SERVICE_NAME
+sudo systemctl enable $SERVICE_NAME #will start on boot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The last thing the tutorial does is modify the nginx configuration file to forward requests on your website to the correct system socket (which will always be up and running, now that we&amp;rsquo;ve configured it as a service). After following along to the end of the tutorial, check that you can now see the test flask website using http and https.&lt;/p&gt;
+
+&lt;h3 id=&#34;relax&#34;&gt;Relax&lt;/h3&gt;
+
+&lt;p&gt;Give yourself a pat on the back: the nginx + uwsgi + flask (+arbitrary python code) + systemd process is a framework that can be used for nearly everything you&amp;rsquo;d want to do related to the internet. And now, you know how to set it up from scratch!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 2: Initial Setup Steps</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework2/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework2/</guid>
+      <description>
+
+&lt;h2 id=&#34;first-steps&#34;&gt;First Steps&lt;/h2&gt;
+
+&lt;h3 id=&#34;get-a-domain&#34;&gt;Get a domain&lt;/h3&gt;
+
+&lt;p&gt;What do we need to do to set up a website like &lt;a href=&#34;https://www.Scratchwork.xyz&#34; target=&#34;_blank&#34;&gt;Scratchwork.xyz&lt;/a&gt;? First, we&amp;rsquo;ll need to actually own the domain.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+Technically we could just use the static IP address of our server, but try telling your friends to check it out *that* way! 
+&lt;/span&gt;
+&lt;/span&gt;
+ Go to a registrar like namecheap.com and find an address that&amp;rsquo;s available and speaks to you. Scratchwork was chosen because it&amp;rsquo;s a domain I use to test out concepts&amp;hellip; like a scratch piece of paper. Be sure to get whois protection if it&amp;rsquo;s not included by default. We&amp;rsquo;ll be back to deal with linking this address to the server in a bit.&lt;/p&gt;
+
+&lt;h3 id=&#34;get-a-server-and-set-up-the-main-user&#34;&gt;Get a server and set up the main user&lt;/h3&gt;
+
+&lt;p&gt;Next, we&amp;rsquo;ll have to get a server ready to host the website. I used Digital Ocean, and set up the server using &lt;a href=&#34;https://data36.com/data-coding-101-install-python-sql-r-bash/&#34; target=&#34;_blank&#34;&gt;this tutorial&lt;/a&gt; from Tomi Mester, who has a nice set of free tutorials on his website on the subject of data science, as well as more in-depth courses available. If you&amp;rsquo;re following his tutorial, be sure to use his promo code as a thank you! I&amp;rsquo;ll briefly summarize the steps we need, because he includes some tools that aren&amp;rsquo;t relevant to us (in particular, we don&amp;rsquo;t need Jupyter nor R/RStudio): set up the cheapest tier of a Digital Ocean droplet using the most up-to-date Ubuntu long-term-service release (20.04, currently). Then, SSH from your desktop to the IP address of the droplet you just set up, using your root credentials.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll then want to create a user for yourself with sudo privileges, so you don&amp;rsquo;t have to sign in using the root account. Re-log in as the named user; it&amp;rsquo;s best practices to not use the root account unless completely necessary. If you need root privileges for an operation, elevate a single command using sudo as a prefix; as long as your user is in the sudo group, you will be allowed to do so after typing in your password.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh root@$IP_ADDRESS
+adduser $USER_NAME
+usermod -aG sudo $USER_NAME
+exit
+ssh $USER_NAME@$IP_ADDRESS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;install-key-software&#34;&gt;Install key software&lt;/h3&gt;
+
+&lt;p&gt;Install python3-pip using apt. We&amp;rsquo;ll use it later in Python&amp;rsquo;s virtual environments&amp;hellip; a lot!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade #this might take a while if you just installed the droplet
+sudo apt install python3-pip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install postgres SQL (on your server) and pgAdmin4 (on your desktop computer). I recommend &lt;strong&gt;carefully&lt;/strong&gt; reading Tomi&amp;rsquo;s tutorial for this step. It includes switching users and some basic SQL commands.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+Pay attention to how pgAdmin uses port 5432 to communicate with the server. We will make sure we leave this port open when configuring the firewall to the server. 
+&lt;/span&gt;
+&lt;/span&gt;
+
+If you have trouble, make sure you&amp;rsquo;re working on the right computer (the server for installing postgres, and your local computer for installing pgAdmin). Check the user@domain in your terminal if you&amp;rsquo;re not sure where you are!&lt;/p&gt;
+
+&lt;h3 id=&#34;add-a-firewall&#34;&gt;Add a firewall.&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s better to do this too early than too late. You&amp;rsquo;ll want to run something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ufw allow ssh,http,https #typical, although right now only the ssh is urgent
+sudo ufw allow 5432 #for postgres!
+sudo ufw enable #set it active
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure to check you can still SSH into $USER_NAME@$IP_ADDRESS.&lt;/p&gt;
+
+&lt;h3 id=&#34;relax&#34;&gt;Relax&lt;/h3&gt;
+
+&lt;p&gt;That was probably a lot of work if you aren&amp;rsquo;t familiar with Linux. But our framework is now established: we have a remote server with an SQL database. Next up is making sure we can host a website at our custom domain name.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 1: Overview</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework1/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework1/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.Scratchwork.xyz&#34; target=&#34;_blank&#34;&gt;Scratchwork.xyz&lt;/a&gt; is a website I made displaying the last 7 days of exterior temperature/humidity, compared with temperature/humidity measurements collected inside my house. The chart is created using Plotly in Python, and the webserver also hosts a simple REST API with basic authentication, letting an ESP32 microcontroller submit its collected data into an SQL database.&lt;/p&gt;
+
+&lt;p&gt;I first started working on this project several weeks prior to Georgia Tech shutting down campus for COVID-19 precautions. I finished a few days prior to the shutdown, which was bad timing &amp;ndash; I had little left to do but tweak it, but far more free time without a commute. Unfortunately my timing was off for a second reason: the server that hosted the website, SQL server, and REST API used Ubuntu 18.04 which was about to be replaced by 20.04. Rather than upgrade directly now that 20.04.1 is available, I decided to re-create the project and write up the process as if creating it for the first time.&lt;/p&gt;
+
+&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+ Along the way, if I have something interesting but not imperative, I&#39;ll put it over in a sidenote. 
+&lt;/span&gt;
+&lt;/span&gt;
+
+
+&lt;p&gt;I had some background in Python, Linux, and microcontrollers prior to beginning, but almost no experience with web-based technologies like REST APIs or website hosting/serving. Even the simplest tasks took hours to debug. When I got stuck, I tried to break down what I was working on into even smaller steps, so that each single step was simple enough to be solved by a single tutorial or documentation entry, even as a beginner. I will try to point out various tutorials that were helpful for different steps in this project. I also found it helpful to create several intermediate states when the next step seemed too confusing, which both solved and created various sticking points.&lt;span class=&#34;sidenote&#34;&gt;
+
+&lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;&#34;&gt;&lt;/input&gt;
+&lt;span class=&#34;sidenote-content&#34;&gt;
+ One intermediate testing step took days to troubleshoot, and didn&#39;t even have any carryover to the final project! 
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The overall framework is loosely based on a description I found of the AdafruitIO service, which is itself a wonderful way to get started in remote sensing/IoT projects without messing with your own server. I chose to keep as much of the coding as I could in Python, since I was familiar with it. I even used Micropython on the ESP32! A goal of this project was to understand all the steps required to create a simple data collection and analysis platform. Although I just use it to compare outside weather (collected using a 3rd-party API) with my own indoor climate, the basic framework could be used for many other purposes.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to include intermedite steps that aren&amp;rsquo;t strictly necessary, which will allow you to follow the thought process in small steps as we build up a useful service. I will try to be explicit in all my reasonings without going into boring detail (&lt;strong&gt;especially&lt;/strong&gt; if the details are provided in tutorials I link), but it might be hard to follow along if you&amp;rsquo;ve never used Linux or Python at all. Luckily, they&amp;rsquo;re both free to use and learn: I highly recommend installing Linux on a personal computer alongside your main operating system, so you can get used to the way it&amp;rsquo;s organized. Use Ubuntu if you&amp;rsquo;re a beginner (I prefer the Mate desktop environment version). The server will use Ubuntu, but it won&amp;rsquo;t have a desktop environment: everything will be done in the command line. But remoting into it from a Linux desktop of your own is a breeze.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll make a Github repository of example files used on the server for the various services we are going to set up. If you try to follow along and get super-stuck, please reach out. I definitely don&amp;rsquo;t know everything but this project helped hone my troubleshooting abilities immensely! ;-)&lt;/p&gt;
+
+&lt;p&gt;Ok&amp;hellip; ready to get started?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Enhanced Two-Phase Heat Transfer by Direct-Contact Condensation Using Directional Acoustic Actuation</title>
       <link>http://www.boziuk.com/publication/enhanced-condensation-ultrasound-therminic/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
@@ -95,43 +552,6 @@
 &lt;p&gt;&lt;img src=&#34;http://www.boziuk.com/img/condensation_example_khz.png&#34; alt=&#34;khz enhanced condensation&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ultrasonic acoustic actuation may also be used for condensation enhancement. While kHz-range acoustic actuation typically couples to capillary instability of the vapor-liquid interface, ultrasonic (MHz-range) actuation leads to the formation of a liquid spout that penetrates into the vapor bubble and significantly increases its surface area and therefore condensation rate.  Focusing of the ultrasonic beam along the spout leads to ejection of small-scale droplets from that are propelled towards the vapor liquid interface and result in localized acceleration of the condensation.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Other FMRL Projects</title>
-      <link>http://www.boziuk.com/project/other-fmrl/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/project/other-fmrl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Acoustically enhanced boiling heat transfer </title>
-      <link>http://www.boziuk.com/publication/enhanced-boiling-physoffluid/</link>
-      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/publication/enhanced-boiling-physoffluid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal Projects</title>
-      <link>http://www.boziuk.com/project/various-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/project/various-personal/</guid>
-      <description>&lt;p&gt;Some other personal projects of interest:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Sound board app with numpad keybinds. Useful for adding sound effects when recording, if the system sound is routed to an input (i.e., using jack, Cadence, Ardour, and other packages from the &lt;a href=&#34;https://kx.studio&#34; target=&#34;_blank&#34;&gt;KXStudio project&lt;/a&gt;.)&lt;br /&gt;
-&lt;a href=&#34;https://github.com/thomasboziuk/soundboard&#34; target=&#34;_blank&#34;&gt;https://github.com/thomasboziuk/soundboard&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&amp;ldquo;Muse Finder&amp;rdquo; function set, reminiscent of weird websites from the 90&amp;rsquo;s. Based on someone&amp;rsquo;s birthday, you are able to find their &amp;ldquo;muses.&amp;rdquo;&lt;br /&gt;
-Who are someone&amp;rsquo;s muses? Well, they&amp;rsquo;re the two leading actors, of the top grossing movie, of the box-office week they were born. &lt;em&gt;Obviously!&lt;/em&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/thomasboziuk/muse_finder&#34; target=&#34;_blank&#34;&gt;https://github.com/thomasboziuk/muse_finder&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

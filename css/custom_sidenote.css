@@ -1,0 +1,42 @@
+
+.sidenote,
+.marginnote {
+    float: right;
+    clear: right;
+    margin-right: -50%;
+    width: 40%;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+}
+
+
+
+
+
+.sidenote-checkbox {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1480px) {
+.sidenote {
+    float: right;
+    clear: right;
+    margin-right: 0%;
+    width: 95%;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    vertical-align: baseline;
+    position: relative;
+    text-align: left;
+
+    }
+
+}

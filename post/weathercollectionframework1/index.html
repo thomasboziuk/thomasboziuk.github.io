@@ -37,11 +37,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.boziuk.com/post/aps-gfm/">
+  <link rel="canonical" href="http://www.boziuk.com/post/weathercollectionframework1/">
 
   
 
-  <title>American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion | Boziuk</title>
+  <title>Scratchwork.xyz, Part 1: Overview | Boziuk</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -139,14 +139,14 @@
   
 
   <div class="article-container">
-    <h1 itemprop="name">American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion</h1>
+    <h1 itemprop="name">Scratchwork.xyz, Part 1: Overview</h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2016-12-01 10:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Thu, Dec 1, 2016
+    <time datetime="2020-12-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Dec 4, 2020
     </time>
   </span>
 
@@ -163,35 +163,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2faps-gfm%2f"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework1%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=American%20Physical%20Society%20Division%20of%20Fluid%20Dynamics%20Gallery%20of%20Fluid%20Motion&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2faps-gfm%2f"
+         href="https://twitter.com/intent/tweet?text=Scratchwork.xyz%2c%20Part%201%3a%20Overview&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework1%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2faps-gfm%2f&amp;title=American%20Physical%20Society%20Division%20of%20Fluid%20Dynamics%20Gallery%20of%20Fluid%20Motion"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework1%2f&amp;title=Scratchwork.xyz%2c%20Part%201%3a%20Overview"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2faps-gfm%2f&amp;title=American%20Physical%20Society%20Division%20of%20Fluid%20Dynamics%20Gallery%20of%20Fluid%20Motion"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework1%2f&amp;title=Scratchwork.xyz%2c%20Part%201%3a%20Overview"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=American%20Physical%20Society%20Division%20of%20Fluid%20Dynamics%20Gallery%20of%20Fluid%20Motion&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2faps-gfm%2f">
+         href="mailto:?subject=Scratchwork.xyz%2c%20Part%201%3a%20Overview&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework1%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -206,17 +206,37 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>The Gallery of Fluid Motion is one of the most enjoyable aspects of the American Physical Society&rsquo;s Division of Fluid Dynamics conferences. Although I had long admired the creativity of the entries, I never found the time to create a poster or video worthy of submission. In 2016, I devoted a significant effort to capturing a phenomena under investigation, and submitted a poster, which was one of the winners of the 2016 APS/DFD Gallery of Fluid Motion award winners in the poster category.</p>
+<h2 id="introduction">Introduction</h2>
 
-<p>A train of vapor bubbles is formed by ejection into a subcooled liquid pool. In the base flow, surface tension pinch-off drives a liquid &ldquo;spear&rdquo; through the center of the vapor bubble to form a vapor torus that leads to rapid condensation. Alternatively, using a directed 1.7 MHz pulsed acoustic beam early in the vapor bubble formation (and prior to pinch-off) exploits the liquid-vapor acoustic impedance mismatch to force a similar liquid &ldquo;spear,&rdquo; forming a vapor torus and accelerating the bubble collapse.</p>
+<p><a href="https://www.Scratchwork.xyz" target="_blank">Scratchwork.xyz</a> is a website I made displaying the last 7 days of exterior temperature/humidity, compared with temperature/humidity measurements collected inside my house. The chart is created using Plotly in Python, and the webserver also hosts a simple REST API with basic authentication, letting an ESP32 microcontroller submit its collected data into an SQL database.</p>
 
-<p><img src="/img/aps_gfm_poster_boziuk_smith_glezer.png" alt="Accelerated Condensation in an Ultrasonic Field - Boziuk Smith and Glezer" /></p>
+<p>I first started working on this project several weeks prior to Georgia Tech shutting down campus for COVID-19 precautions. I finished a few days prior to the shutdown, which was bad timing &ndash; I had little left to do but tweak it, but far more free time without a commute. Unfortunately my timing was off for a second reason: the server that hosted the website, SQL server, and REST API used Ubuntu 18.04 which was about to be replaced by 20.04. Rather than upgrade directly now that 20.04.1 is available, I decided to re-create the project and write up the process as if creating it for the first time.</p>
 
-<h2 id="links">Links</h2>
+<span class="sidenote">
 
-<p><a href="https://gfm.aps.org/meetings/dfd-2016/57daf430b8ac311791000aad" target="_blank">Accelerated Condensation in an Ultrasonic Field</a></p>
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+ Along the way, if I have something interesting but not imperative, I'll put it over in a sidenote. 
+</span>
+</span>
 
-<p><a href="https://gfm.aps.org/" target="_blank">Gallery of Fluid Motion</a></p>
+
+<p>I had some background in Python, Linux, and microcontrollers prior to beginning, but almost no experience with web-based technologies like REST APIs or website hosting/serving. Even the simplest tasks took hours to debug. When I got stuck, I tried to break down what I was working on into even smaller steps, so that each single step was simple enough to be solved by a single tutorial or documentation entry, even as a beginner. I will try to point out various tutorials that were helpful for different steps in this project. I also found it helpful to create several intermediate states when the next step seemed too confusing, which both solved and created various sticking points.<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+ One intermediate testing step took days to troubleshoot, and didn't even have any carryover to the final project! 
+</span>
+</span>
+</p>
+
+<p>The overall framework is loosely based on a description I found of the AdafruitIO service, which is itself a wonderful way to get started in remote sensing/IoT projects without messing with your own server. I chose to keep as much of the coding as I could in Python, since I was familiar with it. I even used Micropython on the ESP32! A goal of this project was to understand all the steps required to create a simple data collection and analysis platform. Although I just use it to compare outside weather (collected using a 3rd-party API) with my own indoor climate, the basic framework could be used for many other purposes.</p>
+
+<p>I&rsquo;m going to include intermedite steps that aren&rsquo;t strictly necessary, which will allow you to follow the thought process in small steps as we build up a useful service. I will try to be explicit in all my reasonings without going into boring detail (<strong>especially</strong> if the details are provided in tutorials I link), but it might be hard to follow along if you&rsquo;ve never used Linux or Python at all. Luckily, they&rsquo;re both free to use and learn: I highly recommend installing Linux on a personal computer alongside your main operating system, so you can get used to the way it&rsquo;s organized. Use Ubuntu if you&rsquo;re a beginner (I prefer the Mate desktop environment version). The server will use Ubuntu, but it won&rsquo;t have a desktop environment: everything will be done in the command line. But remoting into it from a Linux desktop of your own is a breeze.</p>
+
+<p>I&rsquo;ll make a Github repository of example files used on the server for the various services we are going to set up. If you try to follow along and get super-stuck, please reach out. I definitely don&rsquo;t know everything but this project helped hone my troubleshooting abilities immensely! ;-)</p>
+
+<p>Ok&hellip; ready to get started?</p>
 
     </div>
   </div>
@@ -227,9 +247,12 @@
   <nav>
   <ul class="pager">
     
+    <li class="previous"><a href="http://www.boziuk.com/post/aps-gfm/"><span
+      aria-hidden="true">&larr;</span> American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion</a></li>
+    
 
     
-    <li class="next"><a href="http://www.boziuk.com/post/weathercollectionframework1/">Scratchwork.xyz, Part 1: Overview <span
+    <li class="next"><a href="http://www.boziuk.com/post/weathercollectionframework2/">Scratchwork.xyz, Part 2: Initial Setup Steps <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

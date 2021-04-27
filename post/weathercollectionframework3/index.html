@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+	<meta name="google-site-verification" content="1yydbfHFPjvJEEhqNSgsgEe4HjpBBWiuXIIxM5P5gAY" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.40" />
+  <meta name="author" content="Dr. Thomas Boziuk">
+  <meta name="description" content="Thermal-Fluid Science Researcher">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom_sidenote.css">
+  
+
+  <link rel="alternate" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+  <link rel="feed" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.boziuk.com/post/weathercollectionframework3/">
+
+  
+
+  <title>Scratchwork.xyz, Part 3: Get a website running | Boziuk</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Boziuk</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Scratchwork.xyz, Part 3: Get a website running</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2020-12-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Tue, Dec 22, 2020
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework3%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Scratchwork.xyz%2c%20Part%203%3a%20Get%20a%20website%20running&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework3%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework3%2f&amp;title=Scratchwork.xyz%2c%20Part%203%3a%20Get%20a%20website%20running"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework3%2f&amp;title=Scratchwork.xyz%2c%20Part%203%3a%20Get%20a%20website%20running"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Scratchwork.xyz%2c%20Part%203%3a%20Get%20a%20website%20running&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework3%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="serving-something-useful">Serving something useful</h2>
+
+<h3 id="connect-the-domain-to-the-server">Connect the domain to the server.</h3>
+
+<p>If someone points their web browser to your custom domain, what would happen? Right now, the only thing would probably be a landing page from your registrar. You&rsquo;ll need to make sure that the domain actually points to the IP address of your Digital Ocean server. Once it does, we can configure the server to actually, you know&hellip; serve something.</p>
+
+<p>Digital Ocean makes it pretty straight forward with their custom DNS servers. First, go to your <strong>namecheap</strong> account, find the domain you bought, and click manage. We want to then change the nameservers to Custom DNS, pointing to DO&rsquo;s nameservers.<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+At the time of publication, these would be ns1.digitalocean.com, ns2.digitalocean.com, and ns3.digitalocean.com. 
+</span>
+</span>
+ Check out <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars" target="_blank">this tutorial</a> for up-to-date DNS addresses or instructions for other registrars.</p>
+
+<p>Then, we need to configure our Digital Ocean account. <a href="https://www.digitalocean.com/docs/networking/dns/how-to/manage-records/" target="_blank">Check out this tutorial for details.</a> Sign in and click on Networking on the left pane. Enter the domain for your project. If you have multiple droplets, make sure you&rsquo;re adding it to the correct DO project. Then make sure there&rsquo;s an A record where the hostname is $CUSTOM_DOMAIN.$TLD (TLD = top level domain, like .com or .xyz) and that it directs to your droplet&rsquo;s IP address. You will most likely want to add a CNAME record where the hostname is www.$CUSTOM_DOMAIN.$TLD that is an alias of $CUSTOM_DOMAIN.$TLD. Now if a web brower is searching for your website, it should end up at the IP address of your droplet!<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+I'm skipping this step so my ESP32 keeps pushing to the existing server. I'll come back and change this when everything is ready on the 20.04 droplet.
+</span>
+</span>
+</p>
+
+<h3 id="configure-a-test-nginx-webserver">Configure a test NGINX webserver</h3>
+
+<p>Of course your droplet won&rsquo;t do much with an HTTP GET request from a browser yet. We are going to use NGINX to serve our website. Let&rsquo;s try out the simplest option, based on <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04" target="_blank">this tutorial</a>. First install nginx using apt &ndash; our firewall should already be configured OK. Check that the nginx server is running using</p>
+
+<pre><code>systemctl status nginx
+</code></pre>
+
+<p>If it&rsquo;s running, then browsing to your server&rsquo;s IP address should display the nginx test page. Fantastic! Now, we set up the server block as recommended in step 5 of the tutorial. Read that section and follow it carefully.<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+We will need to modify the contents of server block later; we will use it as a map to hand off requests to one service or another depending on whether someone is trying to look at the graph at our data or trying to update the weather collection database.
+</span>
+</span>
+ Now, we should be able to view the example HTML file created in the tutorial if we access the website through the server IP address <strong>or</strong> the website&rsquo;s custom domain using an HTTP request.</p>
+
+<h3 id="get-a-certificate-from-let-s-encrypt-and-make-sure-https-addresses-work">Get a certificate from Let&rsquo;s Encrypt and make sure https addresses work.</h3>
+
+<p>We want to enable https for our server. To do that, we&rsquo;ll use <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04" target="_blank">another tutorial</a>. Again, our firewall should still be configured to allow the correct traffic (this time, on port 443 for https). Certbot makes it relatively easy to manage the Let&rsquo;s Encrypt certificates. Following the tutorial should be no problem; verify that your browser doesn&rsquo;t have any problem seeing the test page using https.</p>
+
+<h3 id="get-nginx-to-serve-a-test-site-using-flask">Get NGINX to serve a test site using flask.</h3>
+
+<p>Because we&rsquo;re eventually going to plot data using python, we will also serve the website using a python framework: flask, the simplest one. Let&rsquo;s make sure we can get flask working with nginx, rather than serving the static html test page we&rsquo;ve been responding with so far.</p>
+
+<p>Yet again, our incremental step has us following another <a href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04" target="_blank">Digital Ocean tutorial</a>. Hopefully, these steps are small enough and the tutorials verbose enough that there aren&rsquo;t too many knowledge gaps being leapt over. This tutorial introduces a new concept that we&rsquo;ll make use of several times in the future: Python virtual environments. You should make a folder to serve as a home base for the python code in this virtual environment, and then create a new environment using</p>
+
+<pre><code>python3 -m venv $PROJECT_NAME_ENV #use a logical name here: match it with the folder structure, and make sure that it's as descriptive as possible to what its end use will be.
+</code></pre>
+
+<p>You enter a virtual environment using</p>
+
+<pre><code>source $PROJECT_NAME_ENV/bin/activate
+</code></pre>
+
+<p>which you can confirm by looking at the domain prefix in your terminal.<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+You can leave this as a test environment/process, or name it something like SQL_API -- that's what it'll become in the next post in this series.
+</span>
+</span>
+</p>
+
+<p>Now that you&rsquo;re inside the virtual environment, <strong>which you specified to be python 3 when creating it</strong>, all the python-related commands that are appended with 3 in ubuntu don&rsquo;t need it any more &ndash; i.e., instead of using pip3 to install the python3 version of a package, you install it using pip. Confusing? You get used to it&hellip; after troubleshooting things.</p>
+
+<p>You can follow the tutorial to make a simple python app.</p>
+
+<p>Then, you&rsquo;ll have to get uwsgi working. I like to think of nginx+uwsgi as a translater between the internet (http) world, and our own server&rsquo;s python world. Once we have the uwsgi.ini file set up<span class="sidenote">
+
+<input class="sidenote-checkbox" type="checkbox" id=""></input>
+<span class="sidenote-content">
+If you ever need to troubleshoot a web service, I recommend changing the number of workers to 1 by making the line 'processes = 1'. This will ensure that you're always interacting with the same worker as you send + receive test data. Otherwise, you are not guaranteed to be interacting with the same process, and they don't share memory: if you are storing and recalling data, it will act weird if you are alternating between processes. This behavior took me days to troubleshoot when testing a simple memory-based database storage/retrieval REST API.
+</span>
+</span>
+, we can configure a system service to start our virtual environment + uwsgi + python file so the server automatically is ready to handle incoming requests. Once we set things up as a service, we can treat it like other system services (i.e., use systemctl and journalctl commands to control and troubleshoot). This requires making a .service file in the /etc/systemd/system/ folder and then running</p>
+
+<pre><code>sudo systemctl start $SERVICE_NAME
+sudo systemctl enable $SERVICE_NAME #will start on boot
+</code></pre>
+
+<p>The last thing the tutorial does is modify the nginx configuration file to forward requests on your website to the correct system socket (which will always be up and running, now that we&rsquo;ve configured it as a service). After following along to the end of the tutorial, check that you can now see the test flask website using http and https.</p>
+
+<h3 id="relax">Relax</h3>
+
+<p>Give yourself a pat on the back: the nginx + uwsgi + flask (+arbitrary python code) + systemd process is a framework that can be used for nearly everything you&rsquo;d want to do related to the internet. And now, you know how to set it up from scratch!</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.boziuk.com/post/weathercollectionframework2/"><span
+      aria-hidden="true">&larr;</span> Scratchwork.xyz, Part 2: Initial Setup Steps</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.boziuk.com/post/weathercollectionframework4/">Scratchwork.xyz, Part 4: Database and simple REST API <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Thomas Boziuk &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

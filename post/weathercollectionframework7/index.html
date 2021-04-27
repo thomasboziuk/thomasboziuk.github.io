@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+	<meta name="google-site-verification" content="1yydbfHFPjvJEEhqNSgsgEe4HjpBBWiuXIIxM5P5gAY" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.40" />
+  <meta name="author" content="Dr. Thomas Boziuk">
+  <meta name="description" content="Thermal-Fluid Science Researcher">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom_sidenote.css">
+  
+
+  <link rel="alternate" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+  <link rel="feed" href="http://www.boziuk.com/index.xml" type="application/rss+xml" title="Boziuk">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.boziuk.com/post/weathercollectionframework7/">
+
+  
+
+  <title>Scratchwork.xyz, Part 7: The ESP32 | Boziuk</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Boziuk</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Scratchwork.xyz, Part 7: The ESP32</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2021-04-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Tue, Apr 20, 2021
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework7%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Scratchwork.xyz%2c%20Part%207%3a%20The%20ESP32&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework7%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework7%2f&amp;title=Scratchwork.xyz%2c%20Part%207%3a%20The%20ESP32"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework7%2f&amp;title=Scratchwork.xyz%2c%20Part%207%3a%20The%20ESP32"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Scratchwork.xyz%2c%20Part%207%3a%20The%20ESP32&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2fweathercollectionframework7%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="wire-up-your-esp32-and-bme280">Wire up your ESP32 and BME280</h2>
+
+<p>If you&rsquo;ve messed around with microcontrollers, this will all be easy. In fact, the hardest part is intalling micropython onto the ESP32. A little walkthrough is provided by <a href="https://docs.micropython.org/en/latest/esp32/tutorial/intro.html" target="_blank">micropython themselves</a>. I like to use the program Thonny to communiate with the controller from my desktop. There&rsquo;s a little Thonny tutorial at <a href="https://randomnerdtutorials.com/getting-started-thonny-micropython-python-ide-esp32-esp8266/" target="_blank">random nerd tutorials</a> if you&rsquo;re interested.</p>
+
+<p>Once you&rsquo;ve confirmed that micropython is working (check with a simple blink program or something), you&rsquo;ll wire up the BME280 breakout board. I like to use Adafruit&rsquo;s libraries and tutorials, so I suppose it&rsquo;s only fair to buy a board from them as well. They have a writeup on using the BME280 with micropython <a href="https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test" target="_blank">here on their website</a>. If you&rsquo;re really strapped for cash, there are cheaper BME280 breakout boards available, as well. Confirm that you can print the values.</p>
+
+<h2 id="make-your-boot-routine">Make your boot routine</h2>
+
+<p>The main purpose of the boot routine is to connect to your wifi network. The code can be viewed on my <a href="ADD GITHUB LINK" target="_blank">github for the ESP32 components</a>. There&rsquo;s nothing to it. Note that you may want to look into reserving a static IP for this device if you have connectivity issues; sometimes this can be a solution.</p>
+
+<h2 id="make-your-main-routine">Make your main routine</h2>
+
+<p>The main routine will include a little more &ldquo;front stuff&rdquo;: imports that belong here rather than in the boot routine, for example. I also add a script just to blink an LED to make sure I know the device has reset when I click the reset button (useful during troubleshooting or updating your scripts). The front stuff also includes the header information, including authentication for the http post request.</p>
+
+<p>A note on this important package, urequests: this is our tool for sending our http POST request to our server. It&rsquo;s worth noting that I believe it will honor an https request, making the POST encypted. Even though we&rsquo;re &ldquo;encoding&rdquo; in base64 the username+password combination that lets us submit an authenticated POST to our API, this is not an encrypted encoding!!! We are relying on the https encryption. Also, my understanding is that you might have issues if you use an ESP8266, because it does not have enough memory to support certificate verification. Unfortunately, most of the documentation that I&rsquo;ve been able to find on this issue has been spotty, and I haven&rsquo;t spent the time double-checking that my connection is secure. This is part of why we used an intermediate python script on the server to ensure the ESP32 is not directly connecting to the SQL database, as well as made sure that the python script was using SQL credentials that have limited abilities.</p>
+
+<p>The main routine then goes into a &ldquo;while True:&rdquo; section, which is much like the &ldquo;void loop&rdquo; section when you&rsquo;re using the C-based Arduino programming language. First we check if we&rsquo;re still connected to wifi, and remedy the situation if we&rsquo;re not. Then, the data collection is simple with the Adafruit BME280 packages: once you set up the pin parameters for i2c communication, you can just sample the values using bme.temperature, bme.humidity, etc. I do some slight formatting before taking a ~20 second average reading, then format my http post request. We post that, with a try-catch loop (I had had some problems with sockets not closing: this remedied that. It may not be strictly necessary). Then, I free up memory, which again may not be necessary. Since I leave this ESP32 running for months at a time, I want to be sure it&rsquo;ll keep working without my checking on it!</p>
+
+<p>This post request is sent off to the server that we already set up. If everything previous to this was done correctly, it&rsquo;ll be inserted into the SQL database, and become data available for plotting when people visit the landing page of the website.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.boziuk.com/post/weathercollectionframework6/"><span
+      aria-hidden="true">&larr;</span> Scratchwork.xyz, Part 6: Plotting for website visitors using Dash</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.boziuk.com/post/weathercollectionframework8/">Scratchwork.xyz, Part 8: Wrapping up, extending capabilities <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Thomas Boziuk &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

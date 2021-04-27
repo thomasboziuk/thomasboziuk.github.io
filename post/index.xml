@@ -13,6 +13,80 @@
     
     
     <item>
+      <title>Scratchwork.xyz, Part 8: Wrapping up, extending capabilities</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework8/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework8/</guid>
+      <description>Congrats! We did something difficult! If you&amp;rsquo;ve followed along, you&amp;rsquo;ve taken part in one of the more rewarding personal projects I&amp;rsquo;ve ever done. The best part about doing all this was that I learned quite a bit about how to set up a host/client system, and understand better the difficulties in setting up a data collection and analysis framework. It was pretty far outside my wheelhouse but well-worth the effort, and hopefully you feel the same way.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 7: The ESP32</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework7/</link>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework7/</guid>
+      <description>Wire up your ESP32 and BME280 If you&amp;rsquo;ve messed around with microcontrollers, this will all be easy. In fact, the hardest part is intalling micropython onto the ESP32. A little walkthrough is provided by micropython themselves. I like to use the program Thonny to communiate with the controller from my desktop. There&amp;rsquo;s a little Thonny tutorial at random nerd tutorials if you&amp;rsquo;re interested.
+Once you&amp;rsquo;ve confirmed that micropython is working (check with a simple blink program or something), you&amp;rsquo;ll wire up the BME280 breakout board.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 6: Plotting for website visitors using Dash</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework6/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework6/</guid>
+      <description>Prepare a new uwsgi ini, socket, python file, python virtualenv and reference in our nginx site map. I want visitors to the website to see data from the past week. Because I don&amp;rsquo;t want them to have to know anything about the site map, I want this data to be displayed when someone lands on the root domain. We&amp;rsquo;ll name this process something logical, like &amp;ldquo;home_plotting&amp;rdquo; or something to that effect.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 5: Gathering external weather data using external APIs</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework5/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework5/</guid>
+      <description>Sign up at openweathermap.org I want to compare our data gathered inside the house with the external weather&amp;hellip; but I don&amp;rsquo;t own a weather station (yet!). We could perhaps laboriously scrape it from a weather website, but that&amp;rsquo;s harder and considered &amp;ldquo;rude&amp;rdquo; at minimum and &amp;ldquo;not in agreement with the license&amp;rdquo; in more exacting terms as compared to simply signing up for and using a free-tier API from one of the various weather services.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 4: Database and simple REST API</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework4/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework4/</guid>
+      <description>Prepare a user for the database and a database You could continue to ssh into your server, then run psql, and set up a table schema that way. In fact, I recommend ssh&amp;rsquo;ing right now for two reasons: to add a user to linux that will be used as a dummy to reduce the permissions in the sql server. Call it say, esp32User. It doesn&amp;rsquo;t need sudo privileges. Then, go back to Tomi&amp;rsquo;s tutorial and review where he sets up a postgress username for his main user: this time, do it for the esp32User account.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 3: Get a website running</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework3/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework3/</guid>
+      <description>Serving something useful Connect the domain to the server. If someone points their web browser to your custom domain, what would happen? Right now, the only thing would probably be a landing page from your registrar. You&amp;rsquo;ll need to make sure that the domain actually points to the IP address of your Digital Ocean server. Once it does, we can configure the server to actually, you know&amp;hellip; serve something.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 2: Initial Setup Steps</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework2/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework2/</guid>
+      <description>First Steps Get a domain What do we need to do to set up a website like Scratchwork.xyz? First, we&amp;rsquo;ll need to actually own the domain. Technically we could just use the static IP address of our server, but try telling your friends to check it out *that* way!   Go to a registrar like namecheap.com and find an address that&amp;rsquo;s available and speaks to you. Scratchwork was chosen because it&amp;rsquo;s a domain I use to test out concepts&amp;hellip; like a scratch piece of paper.</description>
+    </item>
+    
+    <item>
+      <title>Scratchwork.xyz, Part 1: Overview</title>
+      <link>http://www.boziuk.com/post/weathercollectionframework1/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/weathercollectionframework1/</guid>
+      <description>Introduction Scratchwork.xyz is a website I made displaying the last 7 days of exterior temperature/humidity, compared with temperature/humidity measurements collected inside my house. The chart is created using Plotly in Python, and the webserver also hosts a simple REST API with basic authentication, letting an ESP32 microcontroller submit its collected data into an SQL database.
+I first started working on this project several weeks prior to Georgia Tech shutting down campus for COVID-19 precautions.</description>
+    </item>
+    
+    <item>
       <title>American Physical Society Division of Fluid Dynamics Gallery of Fluid Motion</title>
       <link>http://www.boziuk.com/post/aps-gfm/</link>
       <pubDate>Thu, 01 Dec 2016 10:00:00 +0000</pubDate>
