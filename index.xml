@@ -11,6 +11,32 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>CS50x: A Brief Review</title>
+      <link>http://www.boziuk.com/post/cs50review/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/cs50review/</guid>
+      <description>
+
+&lt;h2 id=&#34;cs50x-worth-your-time&#34;&gt;CS50x: Worth your time?&lt;/h2&gt;
+
+&lt;p&gt;Absolutely!&lt;/p&gt;
+
+&lt;p&gt;I thoroughly enjoyed working through the course, although I do recommend listening on 1.25x speed if you&amp;rsquo;re familiar with the material.&lt;/p&gt;
+
+&lt;p&gt;The homeworks are a great little set of problems, and a lot of fun.&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t used C in a while, or ever, the first half the course will be a good refresher filled with a solid foundation for understanding the mechanics of programming a computer.&lt;/p&gt;
+
+&lt;p&gt;If I had taken this &lt;strong&gt;prior&lt;/strong&gt; to working on scratchwork.xyz (&lt;a href=&#34;https://boziuk.com/post/weathercollectionframework1/&#34; target=&#34;_blank&#34;&gt;blog series starts here&lt;/a&gt;, I would have already known how to do many of the website/database tasks, as the second half the course covered a fair bit of related material. Since I took it afterwards, it was good to learn some more best practices, and be forced to use javascript (which I normally try to avoid).&lt;/p&gt;
+
+&lt;h2 id=&#34;what-about-the-final-project&#34;&gt;What about the final project?&lt;/h2&gt;
+
+&lt;p&gt;I wasn&amp;rsquo;t sure on what to do for the final project, but I finally settled on a hybrid computer vision/music project, which I titled &amp;ldquo;Dance to (make) the music!&amp;rdquo; You can either &lt;a href=&#34;https://www.youtube.com/watch?v=rOtRAhowq1Y&#34; target=&#34;_blank&#34;&gt;watch the video&lt;/a&gt; I submitted for CS50x credit, or &lt;a href=&#34;https://boziuk.com/project/dance-to-make-the-music&#34; target=&#34;_blank&#34;&gt;read some more details about it here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Scratchwork.xyz, Part 8: Wrapping up, extending capabilities</title>
       <link>http://www.boziuk.com/post/weathercollectionframework8/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
@@ -536,22 +562,6 @@ sudo ufw enable #set it active
 &lt;p&gt;The present investigation shows that the formation and evolution of vapor bubbles on the heated surface can be substantially altered by a highly directional ultrasound (1.7 MHz) beam, and lead to significant enhancement in heat transfer, including reduced surface superheat and increased CHF.&lt;/p&gt;
 
 &lt;p&gt;Heat transfer enhancement characterized by changes in the boiling curve (i.e., superheat) varies with surface texturing and is also dependent on acoustic beam orientation relative to the surface texture pattern.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Acoustically Enhanced Condensation</title>
-      <link>http://www.boziuk.com/project/enhanced-condensation/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/project/enhanced-condensation/</guid>
-      <description>&lt;p&gt;Vapor bubbles are formed by direct injection into quiescent liquid in a sealed tank under controlled ambient pressure that varies from atmospheric to partial vacuum. The bubbles are injected vertically from a pressurized steam reservoir through nozzles of varying characteristic diameters, and the actuation is applied during different stages of the bubbles formation and advection.&lt;/p&gt;
-
-&lt;p&gt;It is shown that kHz range acoustic actuation leads to excitation of high-amplitude surface capillary (Faraday) waves at the vapor-liquid interface that significantly increases the condensation rate. The increase in condensation rate is affected by the surface waves that increase the mixing in the thermal boundary layer surrounding the bubble, which can be confirmed using Schlieren images.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.boziuk.com/img/condensation_example_khz.png&#34; alt=&#34;khz enhanced condensation&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ultrasonic acoustic actuation may also be used for condensation enhancement. While kHz-range acoustic actuation typically couples to capillary instability of the vapor-liquid interface, ultrasonic (MHz-range) actuation leads to the formation of a liquid spout that penetrates into the vapor bubble and significantly increases its surface area and therefore condensation rate.  Focusing of the ultrasonic beam along the spout leads to ejection of small-scale droplets from that are propelled towards the vapor liquid interface and result in localized acceleration of the condensation.&lt;/p&gt;
 </description>
     </item>
     

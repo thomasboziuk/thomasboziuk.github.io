@@ -13,6 +13,18 @@
     
     
     <item>
+      <title>CS50x: A Brief Review</title>
+      <link>http://www.boziuk.com/post/cs50review/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/cs50review/</guid>
+      <description>CS50x: Worth your time? Absolutely!
+I thoroughly enjoyed working through the course, although I do recommend listening on 1.25x speed if you&amp;rsquo;re familiar with the material.
+The homeworks are a great little set of problems, and a lot of fun.
+If you haven&amp;rsquo;t used C in a while, or ever, the first half the course will be a good refresher filled with a solid foundation for understanding the mechanics of programming a computer.</description>
+    </item>
+    
+    <item>
       <title>Scratchwork.xyz, Part 8: Wrapping up, extending capabilities</title>
       <link>http://www.boziuk.com/post/weathercollectionframework8/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>

@@ -42,6 +42,15 @@ It is shown that kHz range acoustic actuation leads to excitation of high-amplit
     </item>
     
     <item>
+      <title>Dance to (make) the music!</title>
+      <link>http://www.boziuk.com/project/dance-to-make-the-music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/project/dance-to-make-the-music/</guid>
+      <description>Video Demo: https://youtu.be/rOtRAhowq1Y My final project for CS50x was a python-based application that used computer vision to dynamically generate sound based on the camera subject’s movements. The GUI The GUI, which is relatively simple, uses the tkinter package. The GUI is used to display the camera’s output, as well as including a selector widget to modify the MIDI instrument being used to render the sounds (which required a simple interrupt function to be written) and a slider widget to adjust the sensitivity of the percussion to the subject’s wrist motions, as well as a stop button to end the program and free the camera and virtual MIDI device.</description>
+    </item>
+    
+    <item>
       <title>Personal Projects</title>
       <link>http://www.boziuk.com/project/various-personal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

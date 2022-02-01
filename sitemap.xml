@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>http://www.boziuk.com/post/cs50review/</loc>
+      <lastmod>2022-01-31T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.boziuk.com/post/weathercollectionframework8/</loc>
       <lastmod>2021-04-21T00:00:00+00:00</lastmod>
     </url>
@@ -199,8 +207,39 @@
     
     
     <url>
+      <loc>http://www.boziuk.com/tags/computer-vision/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.boziuk.com/tags/cs50x/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.boziuk.com/project/dance-to-make-the-music/</loc>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://www.boziuk.com/tags/mech-eng/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://www.boziuk.com/tags/music/</loc>
       <priority>0</priority>
     </url>
     
