@@ -216,6 +216,10 @@
 
 <p>Of course! If you go to <a href="scratchwork.xyz" target="_blank">scratchwork.xyz</a> right now, you&rsquo;ll see the model&rsquo;s forecast temperature for the next two days, give-or-take (it only computes the forecast twice a day). You can compare it to the past weather that&rsquo;s also plotted, to see if you think it looks reasonable.</p>
 
+<h2 id="why-not-sarima">Why not SARIMA?</h2>
+
+<p>SARIMA and related forecasting tools can have two major issues that I wanted to avoid: first, they&rsquo;re typically univariate, so any information I have about the humidity, recent rainfall, etc., wouldn&rsquo;t be taken into account. I don&rsquo;t want to waste that data. Second, they can&rsquo;t handle the random &ldquo;it rained for 2 days straight and was 50 degrees both day and night&rdquo; cases, because the periodicity is baked right in. LSTM <strong>learns</strong> periodicity, but it still has the capability (in theory) to capture the dynamics of those strange little weather interludes. For this application, neural networks offer big advantages over something like SARIMA.</p>
+
 <h2 id="pretty-good-now-but-what-about-when-climate-change-hits">Pretty good now, but what about when climate change hits?</h2>
 
 <p>Well, first of all, I probably won&rsquo;t have it running by the time that becomes an issue. However, I did implement an automatic system that will continue to train on new data after it&rsquo;s collected enough new information. Once a month, the weights will be adjusted based on newly-available inputs. This should hopefully continue to refine the model, and correct any climate-change-based drift. In case it goes haywire, the previous weights are also being saved.</p>
