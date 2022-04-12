@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Machine Learning Forecast</title>
+      <link>http://www.boziuk.com/post/lstmonscratchwork/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/lstmonscratchwork/</guid>
+      <description>Fun with Forecasts One of the goals when setting up scratchwork.xyz (blog series starts here) was to turn it into a framework that could be used with some fun machine learning models. After about two years of letting it collect data, I decided it was time to put some of that latent knowledge to work for me. How? By predicting the upcoming weather.
+I chose to use a neural network, and programmed in Python with the Keras framework.</description>
+    </item>
+    
+    <item>
       <title>CS50x: A Brief Review</title>
       <link>http://www.boziuk.com/post/cs50review/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>

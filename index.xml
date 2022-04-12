@@ -11,6 +11,34 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Machine Learning Forecast</title>
+      <link>http://www.boziuk.com/post/lstmonscratchwork/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/post/lstmonscratchwork/</guid>
+      <description>
+
+&lt;h2 id=&#34;fun-with-forecasts&#34;&gt;Fun with Forecasts&lt;/h2&gt;
+
+&lt;p&gt;One of the goals when setting up scratchwork.xyz (&lt;a href=&#34;https://boziuk.com/post/weathercollectionframework1/&#34; target=&#34;_blank&#34;&gt;blog series starts here&lt;/a&gt;) was to turn it into a framework that could be used with some fun machine learning models. After about two years of letting it collect data, I decided it was time to put some of that latent knowledge to work for me. How? By predicting the upcoming weather.&lt;/p&gt;
+
+&lt;p&gt;I chose to use a neural network, and programmed in Python with the Keras framework. The center of the model is a dual-layer Long Short Term Memory (LSTM) set with dropout. It&amp;rsquo;s multivariate, using several collected properties (temperature, humidity, wind speed, etc) of the past 7 days to predict the temperature of the next 2 days. Although it&amp;rsquo;s a relatively simple architecture, and it&amp;rsquo;s only trained for about 40 epochs (which is not a lot), I wasn&amp;rsquo;t going for ultra-precision: I was going for something that worked well enough for the time being. I won&amp;rsquo;t bore you with some of the various optimization strategies I tried, except to note that I found that the batch size used between updating the weights of the model had a much larger effect than I expected on the final weights.&lt;/p&gt;
+
+&lt;h2 id=&#34;can-i-see-the-results&#34;&gt;Can I see the results?&lt;/h2&gt;
+
+&lt;p&gt;Of course! If you go to &lt;a href=&#34;scratchwork.xyz&#34; target=&#34;_blank&#34;&gt;scratchwork.xyz&lt;/a&gt; right now, you&amp;rsquo;ll see the model&amp;rsquo;s forecast temperature for the next two days, give-or-take (it only computes the forecast twice a day). You can compare it to the past weather that&amp;rsquo;s also plotted, to see if you think it looks reasonable.&lt;/p&gt;
+
+&lt;h2 id=&#34;pretty-good-now-but-what-about-when-climate-change-hits&#34;&gt;Pretty good now, but what about when climate change hits?&lt;/h2&gt;
+
+&lt;p&gt;Well, first of all, I probably won&amp;rsquo;t have it running by the time that becomes an issue. However, I did implement an automatic system that will continue to train on new data after it&amp;rsquo;s collected enough new information. Once a month, the weights will be adjusted based on newly-available inputs. This should hopefully continue to refine the model, and correct any climate-change-based drift. In case it goes haywire, the previous weights are also being saved.&lt;/p&gt;
+
+&lt;h2 id=&#34;hmm-if-i-plugged-in-the-history-of-stock-prices&#34;&gt;Hmm, if I plugged in the history of stock prices&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;Oh no. Please don&amp;rsquo;t do that if you&amp;rsquo;re someone who&amp;rsquo;s reading this post. You will lose your money.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>CS50x: A Brief Review</title>
       <link>http://www.boziuk.com/post/cs50review/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
@@ -28,7 +56,7 @@
 
 &lt;p&gt;If you haven&amp;rsquo;t used C in a while, or ever, the first half the course will be a good refresher filled with a solid foundation for understanding the mechanics of programming a computer.&lt;/p&gt;
 
-&lt;p&gt;If I had taken this &lt;strong&gt;prior&lt;/strong&gt; to working on scratchwork.xyz (&lt;a href=&#34;https://boziuk.com/post/weathercollectionframework1/&#34; target=&#34;_blank&#34;&gt;blog series starts here&lt;/a&gt;, I would have already known how to do many of the website/database tasks, as the second half the course covered a fair bit of related material. Since I took it afterwards, it was good to learn some more best practices, and be forced to use javascript (which I normally try to avoid).&lt;/p&gt;
+&lt;p&gt;If I had taken this &lt;strong&gt;prior&lt;/strong&gt; to working on scratchwork.xyz (&lt;a href=&#34;https://boziuk.com/post/weathercollectionframework1/&#34; target=&#34;_blank&#34;&gt;blog series starts here&lt;/a&gt;), I would have already known how to do many of the website/database tasks, as the second half the course covered a fair bit of related material. Since I took it afterwards, it was good to learn some more best practices, and be forced to use javascript (which I normally try to avoid).&lt;/p&gt;
 
 &lt;h2 id=&#34;what-about-the-final-project&#34;&gt;What about the final project?&lt;/h2&gt;
 
@@ -549,20 +577,6 @@ sudo ufw enable #set it active
       
       <guid>http://www.boziuk.com/publication/enhanced-boiling-textured-itherm/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Acoustically Enhanced Boiling</title>
-      <link>http://www.boziuk.com/project/enhanced-boiling/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/project/enhanced-boiling/</guid>
-      <description>&lt;p&gt;Boiling heat transfer on submerged textured heated surfaces is enhanced using ultrasound actuation. The heated surface is textured using an array of open microchannels that advantageously separate the nucleation sites on the surface and inhibit the transition to film boiling, which significantly increases the critical heat flux compared to a smooth surface of the same planform dimensions.&lt;/p&gt;
-
-&lt;p&gt;The present investigation shows that the formation and evolution of vapor bubbles on the heated surface can be substantially altered by a highly directional ultrasound (1.7 MHz) beam, and lead to significant enhancement in heat transfer, including reduced surface superheat and increased CHF.&lt;/p&gt;
-
-&lt;p&gt;Heat transfer enhancement characterized by changes in the boiling curve (i.e., superheat) varies with surface texturing and is also dependent on acoustic beam orientation relative to the surface texture pattern.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

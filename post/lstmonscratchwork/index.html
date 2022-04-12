@@ -37,11 +37,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.boziuk.com/post/cs50review/">
+  <link rel="canonical" href="http://www.boziuk.com/post/lstmonscratchwork/">
 
   
 
-  <title>CS50x: A Brief Review | Boziuk</title>
+  <title>Machine Learning Forecast | Boziuk</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -139,14 +139,14 @@
   
 
   <div class="article-container">
-    <h1 itemprop="name">CS50x: A Brief Review</h1>
+    <h1 itemprop="name">Machine Learning Forecast</h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2022-01-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Mon, Jan 31, 2022
+    <time datetime="2022-04-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Mon, Apr 11, 2022
     </time>
   </span>
 
@@ -163,35 +163,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2fcs50review%2f"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.boziuk.com%2fpost%2flstmonscratchwork%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=CS50x%3a%20A%20Brief%20Review&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fcs50review%2f"
+         href="https://twitter.com/intent/tweet?text=Machine%20Learning%20Forecast&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2flstmonscratchwork%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2fcs50review%2f&amp;title=CS50x%3a%20A%20Brief%20Review"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.boziuk.com%2fpost%2flstmonscratchwork%2f&amp;title=Machine%20Learning%20Forecast"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2fcs50review%2f&amp;title=CS50x%3a%20A%20Brief%20Review"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.boziuk.com%2fpost%2flstmonscratchwork%2f&amp;title=Machine%20Learning%20Forecast"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=CS50x%3a%20A%20Brief%20Review&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2fcs50review%2f">
+         href="mailto:?subject=Machine%20Learning%20Forecast&amp;body=http%3a%2f%2fwww.boziuk.com%2fpost%2flstmonscratchwork%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -206,21 +206,23 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<h2 id="cs50x-worth-your-time">CS50x: Worth your time?</h2>
+<h2 id="fun-with-forecasts">Fun with Forecasts</h2>
 
-<p>Absolutely!</p>
+<p>One of the goals when setting up scratchwork.xyz (<a href="https://boziuk.com/post/weathercollectionframework1/" target="_blank">blog series starts here</a>) was to turn it into a framework that could be used with some fun machine learning models. After about two years of letting it collect data, I decided it was time to put some of that latent knowledge to work for me. How? By predicting the upcoming weather.</p>
 
-<p>I thoroughly enjoyed working through the course, although I do recommend listening on 1.25x speed if you&rsquo;re familiar with the material.</p>
+<p>I chose to use a neural network, and programmed in Python with the Keras framework. The center of the model is a dual-layer Long Short Term Memory (LSTM) set with dropout. It&rsquo;s multivariate, using several collected properties (temperature, humidity, wind speed, etc) of the past 7 days to predict the temperature of the next 2 days. Although it&rsquo;s a relatively simple architecture, and it&rsquo;s only trained for about 40 epochs (which is not a lot), I wasn&rsquo;t going for ultra-precision: I was going for something that worked well enough for the time being. I won&rsquo;t bore you with some of the various optimization strategies I tried, except to note that I found that the batch size used between updating the weights of the model had a much larger effect than I expected on the final weights.</p>
 
-<p>The homeworks are a great little set of problems, and a lot of fun.</p>
+<h2 id="can-i-see-the-results">Can I see the results?</h2>
 
-<p>If you haven&rsquo;t used C in a while, or ever, the first half the course will be a good refresher filled with a solid foundation for understanding the mechanics of programming a computer.</p>
+<p>Of course! If you go to <a href="scratchwork.xyz" target="_blank">scratchwork.xyz</a> right now, you&rsquo;ll see the model&rsquo;s forecast temperature for the next two days, give-or-take (it only computes the forecast twice a day). You can compare it to the past weather that&rsquo;s also plotted, to see if you think it looks reasonable.</p>
 
-<p>If I had taken this <strong>prior</strong> to working on scratchwork.xyz (<a href="https://boziuk.com/post/weathercollectionframework1/" target="_blank">blog series starts here</a>), I would have already known how to do many of the website/database tasks, as the second half the course covered a fair bit of related material. Since I took it afterwards, it was good to learn some more best practices, and be forced to use javascript (which I normally try to avoid).</p>
+<h2 id="pretty-good-now-but-what-about-when-climate-change-hits">Pretty good now, but what about when climate change hits?</h2>
 
-<h2 id="what-about-the-final-project">What about the final project?</h2>
+<p>Well, first of all, I probably won&rsquo;t have it running by the time that becomes an issue. However, I did implement an automatic system that will continue to train on new data after it&rsquo;s collected enough new information. Once a month, the weights will be adjusted based on newly-available inputs. This should hopefully continue to refine the model, and correct any climate-change-based drift. In case it goes haywire, the previous weights are also being saved.</p>
 
-<p>I wasn&rsquo;t sure on what to do for the final project, but I finally settled on a hybrid computer vision/music project, which I titled &ldquo;Dance to (make) the music!&rdquo; You can either <a href="https://www.youtube.com/watch?v=rOtRAhowq1Y" target="_blank">watch the video</a> I submitted for CS50x credit, or <a href="https://boziuk.com/project/dance-to-make-the-music" target="_blank">read some more details about it here</a>.</p>
+<h2 id="hmm-if-i-plugged-in-the-history-of-stock-prices">Hmm, if I plugged in the history of stock prices&hellip;</h2>
+
+<p>Oh no. Please don&rsquo;t do that if you&rsquo;re someone who&rsquo;s reading this post. You will lose your money.</p>
 
     </div>
   </div>
@@ -231,13 +233,10 @@
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="http://www.boziuk.com/post/weathercollectionframework8/"><span
-      aria-hidden="true">&larr;</span> Scratchwork.xyz, Part 8: Wrapping up, extending capabilities</a></li>
+    <li class="previous"><a href="http://www.boziuk.com/post/cs50review/"><span
+      aria-hidden="true">&larr;</span> CS50x: A Brief Review</a></li>
     
 
-    
-    <li class="next"><a href="http://www.boziuk.com/post/lstmonscratchwork/">Machine Learning Forecast <span
-      aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>
