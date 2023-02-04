@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Dynamics of vapor bubble condensation under directional ultrasonic actuation</title>
+      <link>http://www.boziuk.com/publication/enhanced-condensation-ultrasound-pof/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.boziuk.com/publication/enhanced-condensation-ultrasound-pof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Machine Learning Forecast</title>
       <link>http://www.boziuk.com/post/lstmonscratchwork/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
@@ -572,15 +581,6 @@ sudo ufw enable #set it active
 
 &lt;p&gt;&lt;a href=&#34;https://gfm.aps.org/&#34; target=&#34;_blank&#34;&gt;Gallery of Fluid Motion&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Enhanced boiling heat transfer on micromachined surfaces using acoustic actuation</title>
-      <link>http://www.boziuk.com/publication/enhanced-boiling-textured-itherm/</link>
-      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.boziuk.com/publication/enhanced-boiling-textured-itherm/</guid>
-      <description></description>
     </item>
     
   </channel>
